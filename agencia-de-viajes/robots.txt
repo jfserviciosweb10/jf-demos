@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://viajesdelsolmza.com.ar/sitemap.xml

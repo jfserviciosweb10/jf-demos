@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vargas-arquitectos.com.ar/sitemap.xml

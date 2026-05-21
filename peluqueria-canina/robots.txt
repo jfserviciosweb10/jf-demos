@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://happydogcba.com.ar/sitemap.xml

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://plomeriatotalba.com.ar/sitemap.xml

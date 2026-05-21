@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://saloneljardinCba.com.ar/sitemap.xml

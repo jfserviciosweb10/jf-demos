@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://guarderia-feliz.com.ar/sitemap.xml
