@@ -12,6 +12,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<!-- Microsoft Clarity -->
+<script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","XXXXXXXXXX");</script>
+
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeGoodsStore","name":"Ferretería El Clavo","description":"Ferretería en Rafaela, Santa Fe. Herramientas y materiales con asesoramiento personalizado.","url":"https://ferreteriaelclavo.com.ar","telephone":"+54 9 3492 555-7017","email":"info@ferreteriaelclavo.com.ar","address":{"@type":"PostalAddress","addressLocality":"Rafaela, Santa Fe","addressCountry":"AR"},"openingHours":"Mo-Fr 08:00-20:00","priceRange":"$$"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Hacen entregas a domicilio?","acceptedAnswer":{"@type":"Answer","text":"Sí, realizamos entregas en la zona. Consultanos disponibilidad y costos por WhatsApp."}},{"@type":"Question","name":"¿Venden por mayor?","acceptedAnswer":{"@type":"Answer","text":"Sí, atendemos tanto a clientes minoristas como a constructoras y profesionales por mayor."}},{"@type":"Question","name":"¿Tienen servicio de corte de materiales?","acceptedAnswer":{"@type":"Answer","text":"Sí, ofrecemos corte de madera, vidrio y otros materiales. Consultanos para más detalles."}},{"@type":"Question","name":"¿Aceptan pedidos por encargo?","acceptedAnswer":{"@type":"Answer","text":"Sí, pedimos productos que no tengamos en stock. Consultanos el plazo de entrega."}},{"@type":"Question","name":"¿Tienen asesoramiento técnico?","acceptedAnswer":{"@type":"Answer","text":"Nuestro equipo está capacitado para asesorarte en materiales y herramientas según tu proyecto."}}]}</script>
 <style>
@@ -22,8 +29,8 @@
   --r:14px;--sombra:0 6px 28px rgba(0,0,0,.09);--tr:.35s cubic-bezier(.4,0,.2,1);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--ff-b);color:var(--texto);background:var(--fondo);overflow-x:hidden;line-height:1.65}
+html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden}
+body{font-family:var(--ff-b);color:var(--texto);background:var(--fondo);overflow-x:hidden;line-height:1.65;padding-top:109px}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block;object-fit:cover}
 h4{font-family:var(--ff-d);font-size:1rem;font-weight:700;color:var(--texto);line-height:1.4}
@@ -43,26 +50,26 @@ h5{font-family:var(--ff-d);font-size:.9rem;font-weight:700;color:var(--texto);li
 @keyframes bounceWA{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
 /* JF BAR */
-.jf-bar{background:linear-gradient(90deg,#0d2b5e,#1a3a6b);padding:9px 24px;display:flex;justify-content:space-between;align-items:center;font-size:13px;position:sticky;top:0;z-index:1001}
+.jf-bar{background:linear-gradient(90deg,#0d2b5e,#1a3a6b);padding:9px 24px;display:flex;justify-content:space-between;align-items:center;font-size:13px;position:fixed;top:0;left:0;right:0;z-index:1001}
 .jf-bar span{color:#b8c8e0;letter-spacing:.02em}
 .jf-btn{background:#25d366;color:white;padding:6px 18px;border-radius:20px;font-weight:700;font-size:13px;transition:all var(--tr)}
 .jf-btn:hover{background:#20c55a;transform:translateY(-1px)}
 
 /* NAVBAR */
-.navbar{background:white;padding:14px 0;position:sticky;top:41px;z-index:1000;box-shadow:0 2px 16px rgba(0,0,0,.07);transition:all var(--tr)}
+.navbar{background:white;padding:14px 0;position:fixed;top:0;left:0;right:0;z-index:1000;box-shadow:0 2px 16px rgba(0,0,0,.07);transition:all var(--tr)}
 .navbar.scrolled{padding:10px 0;box-shadow:0 4px 24px rgba(0,0,0,.12)}
 .nav-inner{max-width:1160px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}
 .logo{font-family:var(--ff-d);font-size:20px;font-weight:700;color:var(--p)}
-.nav-links{list-style:none;display:flex;gap:28px}
+.nav-links{list-style:none;display:none;gap:28px}.nav-links.open{display:flex;flex-direction:column;position:fixed;top:89px;left:0;right:0;width:100%;max-width:100%;background:white;padding:32px 24px;gap:8px;box-shadow:0 8px 32px rgba(0,0,0,.15);z-index:999}
 .nav-links a{color:#555;font-weight:600;font-size:14px;letter-spacing:.03em;text-transform:uppercase;transition:color var(--tr);position:relative;padding-bottom:4px}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--p);transition:width var(--tr)}
 .nav-links a:hover{color:var(--p)}
 .nav-links a:hover::after,.nav-links a.active::after{width:100%}
-.menu-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--p)}
+.menu-toggle{display:block;background:none;border:none;font-size:22px;cursor:pointer;color:var(--p)}
 
 /* HERO */
 .hero{position:relative;height:100vh;min-height:620px;display:flex;align-items:center;justify-content:center;text-align:center;color:white;overflow:hidden}
-.hero-img{position:absolute;inset:0;width:100%;height:110%;object-fit:cover;z-index:-2;transform:scale(1.05);transition:transform 8s ease-out}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 8s ease-out}
 .hero-img.loaded{transform:scale(1)}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(0,0,0,.74) 0%,rgba(0,0,0,.3) 60%,rgba(0,0,0,.58) 100%);z-index:-1}
 .hero-content{max-width:860px;padding:0 24px;animation:fadeUp 1.1s ease-out both}
@@ -83,7 +90,7 @@ h5{font-family:var(--ff-d);font-size:.9rem;font-weight:700;color:var(--texto);li
 
 /* NOSOTROS */
 .nosotros{padding:96px 24px;background:var(--fondo)}
-.nosotros-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1160px;margin:0 auto}
+.nosotros-grid{display:grid;grid-template-columns:1fr;gap:64px;align-items:center;max-width:1160px;margin:0 auto}
 .nosotros-img-wrap{position:relative;border-radius:20px;overflow:hidden;height:480px;box-shadow:0 24px 64px rgba(0,0,0,.15)}
 .nosotros-img-wrap img{width:100%;height:100%;object-fit:cover}
 .nosotros-badge{position:absolute;bottom:24px;left:24px;background:var(--p);color:white;padding:12px 20px;border-radius:12px;font-weight:700;font-size:.95rem;box-shadow:0 8px 24px rgba(0,0,0,.3)}
@@ -99,9 +106,9 @@ h5{font-family:var(--ff-d);font-size:.9rem;font-weight:700;color:var(--texto);li
 
 /* SERVICIOS */
 .servicios{padding:96px 24px;background:white}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.services-grid.s4{grid-template-columns:repeat(2,1fr)}
-.services-grid.s2{grid-template-columns:repeat(2,1fr)}
+.services-grid{display:grid;grid-template-columns:1fr;gap:28px}
+.services-grid.s4{grid-template-columns:1fr}
+.services-grid.s2{grid-template-columns:1fr}
 .service-card{background:var(--fondo);padding:40px 32px;border-radius:var(--r);box-shadow:var(--sombra);transition:all var(--tr);text-align:center;position:relative;overflow:hidden;border:1px solid rgba(0,0,0,.05)}
 .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--p),var(--a));transform:scaleX(0);transform-origin:left;transition:transform var(--tr)}
 .service-card:hover::before{transform:scaleX(1)}
@@ -114,7 +121,7 @@ h5{font-family:var(--ff-d);font-size:.9rem;font-weight:700;color:var(--texto);li
 
 /* GALERÍA */
 .galeria{padding:96px 24px;background:var(--fondo)}
-.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0}
+.gal-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:0}
 .gal-item{border-radius:16px;overflow:hidden;height:240px;position:relative;cursor:pointer}
 .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
 .gal-item:hover img{transform:scale(1.08)}
@@ -129,7 +136,7 @@ h5{font-family:var(--ff-d);font-size:.9rem;font-weight:700;color:var(--texto);li
 
 /* PROCESO */
 .proceso{padding:96px 24px;background:white}
-.proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1000px;margin:0 auto;position:relative}
+.proc-grid{display:grid;grid-template-columns:1fr;gap:32px;max-width:1000px;margin:0 auto;position:relative}
 .proc-grid::before{content:'';position:absolute;top:36px;left:15%;right:15%;height:2px;background:linear-gradient(90deg,var(--p),var(--a));z-index:0}
 .proc-step{text-align:center;position:relative;z-index:1;padding:0 16px}
 .proc-num{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--p),var(--a));color:white;font-family:var(--ff-d);font-size:1.6rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
@@ -141,7 +148,7 @@ h5{font-family:var(--ff-d);font-size:.9rem;font-weight:700;color:var(--texto);li
 .testimonios::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:rgba(255,255,255,.05);border-radius:50%}
 .testimonios .section-title{color:white}
 .testimonios .divider{background:rgba(255,255,255,.5)}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testi-grid{display:grid;grid-template-columns:1fr;gap:24px}
 .testi-card{background:rgba(255,255,255,.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:32px 28px;transition:all var(--tr)}
 .testi-card:hover{background:rgba(255,255,255,.18);transform:translateY(-6px)}
 .testi-stars{font-size:1.1rem;margin-bottom:16px}
@@ -163,7 +170,7 @@ h5{font-family:var(--ff-d);font-size:.9rem;font-weight:700;color:var(--texto);li
 
 /* CONTACTO */
 .contacto{padding:96px 24px;background:white}
-.contacto-wrap{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:start}
+.contacto-wrap{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:56px;align-items:start}
 .contacto-info h2{font-family:var(--ff-d);font-size:2rem;color:var(--p);margin-bottom:12px}
 .contacto-info p{color:#666;margin-bottom:28px;line-height:1.7}
 .contacto-dato{display:flex;align-items:center;gap:16px;margin-bottom:16px;padding:16px 20px;background:var(--fondo);border-radius:var(--r);box-shadow:var(--sombra);transition:all var(--tr)}
@@ -188,7 +195,7 @@ textarea.form-control{resize:vertical;min-height:110px}
 
 /* FOOTER */
 footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;max-width:1160px;margin:0 auto 40px}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:48px;max-width:1160px;margin:0 auto 40px}
 .footer-brand .logo{color:var(--s);font-size:1.5rem;margin-bottom:12px}
 .footer-brand p{font-size:.87rem;color:#666;line-height:1.7;max-width:280px}
 .footer-social{display:flex;gap:10px;margin-top:20px}
@@ -204,6 +211,30 @@ footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
 .footer-bottom a{color:#666;font-size:.82rem;transition:color var(--tr)}
 .footer-bottom a:hover{color:white}
 
+/* QR + VCF */
+.contacto-extras{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px}
+.extra-btn{display:flex;align-items:center;gap:8px;padding:11px 20px;border-radius:50px;font-size:.88rem;font-weight:700;transition:all .3s;cursor:pointer;border:2px solid var(--p);color:var(--p);background:transparent;text-decoration:none}
+.extra-btn:hover{background:var(--p);color:white;transform:translateY(-2px)}
+.extra-btn i{font-size:1rem}
+#qrCanvas{margin-top:16px;display:none}
+#qrCanvas.show{display:block}
+.qr-wrap{text-align:center;margin-top:12px}
+.qr-wrap p{font-size:.75rem;color:#999;margin-top:6px}
+
+/* EXIT INTENT POPUP */
+#exitPopup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:99999;align-items:center;justify-content:center;padding:20px}
+#exitPopup.show{display:flex}
+.exit-box{background:white;border-radius:20px;padding:40px 32px;max-width:480px;width:100%;text-align:center;position:relative;animation:fadeUp .4s ease-out both;box-shadow:0 24px 80px rgba(0,0,0,.3)}
+.exit-close{position:absolute;top:16px;right:20px;font-size:1.4rem;cursor:pointer;color:#aaa;background:none;border:none;line-height:1;transition:color .2s}
+.exit-close:hover{color:#333}
+.exit-emoji{font-size:3rem;margin-bottom:12px}
+.exit-box h3{font-family:var(--ff-d);font-size:1.8rem;color:var(--p);margin-bottom:10px}
+.exit-box p{color:#666;font-size:1rem;line-height:1.7;margin-bottom:24px}
+.exit-wa{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#25d366;color:white;border-radius:50px;font-weight:700;font-size:1rem;transition:all .3s;box-shadow:0 6px 24px rgba(37,211,102,.4)}
+.exit-wa:hover{background:#20c55a;transform:translateY(-2px)}
+.exit-skip{display:block;margin-top:14px;font-size:.85rem;color:#aaa;cursor:pointer;transition:color .2s}
+.exit-skip:hover{color:#666}
+
 /* WA FLOTANTE */
 .wa-float{position:fixed;bottom:28px;right:28px;z-index:9999;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;animation:bounceWA 2.5s ease-in-out infinite;transition:transform var(--tr);box-shadow:0 4px 20px rgba(37,211,102,.5)}
 .wa-float:hover{transform:scale(1.12);animation:none}
@@ -214,31 +245,32 @@ footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
 #acceptCookies{background:var(--p);color:white;border:none;padding:10px 24px;border-radius:30px;cursor:pointer;font-weight:700;font-size:.88rem;flex-shrink:0;transition:all var(--tr)}
 #acceptCookies:hover{filter:brightness(1.1)}
 
-@media(max-width:1024px){
-  .nosotros-grid{grid-template-columns:1fr}
-  .nosotros-img-wrap{height:320px}
-  .contacto-wrap{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:900px){
-  .nav-links{display:none;flex-direction:column;position:fixed;top:89px;left:0;width:100%;background:white;padding:32px 24px;gap:8px;box-shadow:0 8px 32px rgba(0,0,0,.15);z-index:999}
-  .nav-links.open{display:flex}
-  .menu-toggle{display:block}
-  .proc-grid{grid-template-columns:1fr}
-  .proc-grid::before{display:none}
-  .testi-grid{grid-template-columns:1fr}
-  .gal-grid{grid-template-columns:repeat(2,1fr)}
-  
-}
-@media(max-width:640px){
-  .hero-btns{flex-direction:column;align-items:center}
-  .btn,.btn-p,.btn-o{width:100%;text-align:center}
+@media(min-width:640px){
   .stats-grid{grid-template-columns:repeat(2,1fr)}
   .services-grid,.services-grid.s4,.services-grid.s2{grid-template-columns:1fr}
-  .nosotros-valores{grid-template-columns:1fr}
-  .gal-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr}
-  .footer-bottom{flex-direction:column;align-items:flex-start}
+  .nosotros-valores{grid-template-columns:repeat(2,1fr)}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:900px){
+  .nav-links{display:flex;flex-direction:row;position:static;width:auto;background:transparent;padding:0;gap:28px;box-shadow:none}
+  .menu-toggle{display:none}
+  .services-grid{grid-template-columns:repeat(3,1fr)}
+  .services-grid.s4{grid-template-columns:1fr}
+  .services-grid.s2{grid-template-columns:1fr}
+  .proc-grid{grid-template-columns:repeat(3,1fr)}
+  .proc-grid::before{display:block}
+  .testi-grid{grid-template-columns:repeat(3,1fr)}
+  .gal-grid{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:1.5fr 1fr 1fr}
+  .footer-bottom{flex-direction:row;align-items:center}
+}
+@media(min-width:1024px){
+  .nosotros-grid{grid-template-columns:1fr 1fr}
+  .nosotros-img-wrap{height:520px}
+  .contacto-wrap{grid-template-columns:1fr 1.4fr}
+  .hero-btns{flex-direction:row;align-items:flex-start}
+  .btn,.btn-p,.btn-o{width:auto;text-align:center}
 }
 </style>
 </head>
@@ -567,6 +599,26 @@ footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
         </form>
       </div>
     </div>
+    <!-- QR + VCF -->
+    <div class="contacto-extras">
+      <button class="extra-btn" onclick="toggleQR()" aria-label="Ver QR de contacto">
+        <i class="fas fa-qrcode"></i> Escanear QR
+      </button>
+      <a class="extra-btn" href="#" onclick="descargarVCF(event)" aria-label="Guardar contacto">
+        <i class="fas fa-address-card"></i> Guardar contacto
+      </a>
+    </div>
+    <div class="qr-wrap">
+      <div id="qrCanvas"></div>
+      <p id="qrLabel" style="display:none">Escaneá para ir directo a WhatsApp</p>
+    </div>
+    <!-- BREVO MEETINGS -->
+    <div style="text-align:center;margin-top:40px;padding:32px 24px;background:var(--fondo);border-radius:var(--r);">
+      <p style="font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--a);margin-bottom:8px;">¿Preferís elegir día y hora?</p>
+      <h3 style="font-family:var(--ff-d);font-size:1.5rem;color:var(--p);margin-bottom:12px;">Agendá una consulta sin cargo</h3>
+      <p style="color:#666;margin-bottom:20px;font-size:.95rem;">Elegí el horario que mejor te quede — presencial o videollamada.</p>
+      <a href="https://meetings.brevo.com/ferreteria-el-clavo" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:13px 32px;background:linear-gradient(135deg,var(--p),var(--a));color:white;border-radius:50px;font-weight:700;font-size:.95rem;box-shadow:0 6px 24px rgba(0,0,0,.2);">📅 Elegir mi horario</a>
+    </div>
   </div>
 </section>
 
@@ -614,7 +666,7 @@ footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
 <!-- WA FLOTANTE -->
 <a href="https://wa.me/5493492557017?text=Hola,%20quiero%20información%20sobre%20Ferreter%C3%ADa%20El%20Clavo"
    class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <img src="img/WHATSAPP-FLOTANTE.webp" alt="WhatsApp">
+  <img src="img/WHATSAPP-FLOTANTE.webp?v=2" alt="WhatsApp" loading="lazy">
 </a>
 
 <!-- COOKIES -->
@@ -627,18 +679,39 @@ footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
 /* Nav mobile */
 const menuToggle=document.getElementById('menuToggle');
 const navLinks=document.getElementById('navLinks');
-menuToggle.addEventListener('click',()=>{
-  navLinks.classList.toggle('open');
-  menuToggle.querySelector('i').className=navLinks.classList.contains('open')?'fas fa-times':'fas fa-bars';
+menuToggle.addEventListener('click',function(e){
+  e.stopPropagation();
+  const isOpen=navLinks.classList.toggle('open');
+  menuToggle.querySelector('i').className=isOpen?'fas fa-times':'fas fa-bars';
 });
 document.querySelectorAll('.nav-links a').forEach(a=>{
-  a.addEventListener('click',()=>{navLinks.classList.remove('open');menuToggle.querySelector('i').className='fas fa-bars';});
+  a.addEventListener('click',function(){
+    navLinks.classList.remove('open');
+    menuToggle.querySelector('i').className='fas fa-bars';
+  });
+});
+document.addEventListener('click',function(e){
+  if(!navLinks.contains(e.target)&&e.target!==menuToggle){
+    navLinks.classList.remove('open');
+    menuToggle.querySelector('i').className='fas fa-bars';
+  }
 });
 
 /* Navbar scroll */
-window.addEventListener('scroll',()=>{
-  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>60);
-},{passive:true});
+(function(){
+  const jfBar = document.querySelector('.jf-bar');
+  const nav   = document.getElementById('mainNav');
+  function updateNavTop(){
+    const jfH = jfBar ? jfBar.offsetHeight : 0;
+    nav.style.top = jfH + 'px';
+    document.body.style.paddingTop = (jfH + nav.offsetHeight) + 'px';
+  }
+  updateNavTop();
+  window.addEventListener('resize', updateNavTop, {passive:true});
+  window.addEventListener('scroll',()=>{
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  },{passive:true});
+})();
 
 /* Hero parallax */
 const heroImg=document.getElementById('heroImg');
@@ -739,6 +812,98 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 
 /* Anti-copia */
 document.addEventListener('contextmenu',e=>e.preventDefault());
+
+
+
+/* QR Code */
+(function(){
+  let qrGenerated = false;
+  window.toggleQR = function(){
+    const wrap = document.getElementById('qrCanvas');
+    const label = document.getElementById('qrLabel');
+    if(!qrGenerated){
+      new QRCode(wrap, {
+        text: 'https://wa.me/5493492557017',
+        width: 160, height: 160,
+        colorDark: '#E9C46A', colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.H
+      });
+      qrGenerated = true;
+    }
+    const showing = wrap.classList.toggle('show');
+    label.style.display = showing ? 'block' : 'none';
+  };
+})();
+
+/* Tarjeta VCF */
+window.descargarVCF = function(e){
+  e.preventDefault();
+  const vcf = [
+    'BEGIN:VCARD',
+    'VERSION:3.0',
+    'FN:Ferretería El Clavo',
+    'ORG:Ferretería El Clavo',
+    'TEL;TYPE=CELL:+54 9 3492 555-7017',
+    'EMAIL:info@ferreteriaelclavo.com.ar',
+    'URL:https://ferreteriaelclavo.com.ar',
+    'ADR;TYPE=WORK:;;Rafaela, Santa Fe;;;;AR',
+    'NOTE:Ferretería en Rafaela, Santa Fe. Herramientas y materiales con asesoramiento personalizado.',
+    'END:VCARD'
+  ].join('\n');
+  const blob = new Blob([vcf], {type:'text/vcard'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'ferreteria-el-clavo.vcf';
+  a.click();
+  URL.revokeObjectURL(url);
+};
+
+/* Exit Intent */
+(function(){
+  let shown = false;
+  function showExit(){
+    if(shown || sessionStorage.getItem('exitShown')) return;
+    shown = true;
+    sessionStorage.setItem('exitShown','1');
+    const popup = document.getElementById('exitPopup');
+    if(popup) popup.classList.add('show');
+  }
+  function hideExit(){
+    const popup = document.getElementById('exitPopup');
+    if(popup) popup.classList.remove('show');
+  }
+  document.addEventListener('mouseleave', e => {
+    if(e.clientY < 10) showExit();
+  });
+  setTimeout(showExit, 45000);
+  document.addEventListener('click', function(e){
+    const closeBtn = document.getElementById('exitClose');
+    const skipBtn  = document.getElementById('exitSkip');
+    const popup    = document.getElementById('exitPopup');
+    if(!popup) return;
+    if(e.target === closeBtn || e.target === skipBtn || e.target === popup){
+      hideExit();
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') hideExit();
+  });
+})();
 </script>
+
+<!-- EXIT INTENT POPUP -->
+<div id="exitPopup">
+  <div class="exit-box">
+    <button class="exit-close" id="exitClose" aria-label="Cerrar">✕</button>
+    <div class="exit-emoji">👋</div>
+    <h3>¡Antes de irte!</h3>
+    <p>¿Tenés dudas sobre cómo funciona el sistema? Escribinos por WhatsApp y te respondemos en minutos, sin compromiso.</p>
+    <a href="https://wa.me/5493492557017?text=Hola, vi la web de Ferreter%C3%ADa%20El%20Clavo y quiero consultar" target="_blank" rel="noopener" class="exit-wa">
+      <i class="fab fa-whatsapp"></i> Escribinos ahora
+    </a>
+    <span class="exit-skip" id="exitSkip">No gracias, ya tengo toda la info</span>
+  </div>
+</div>
 </body>
 </html>

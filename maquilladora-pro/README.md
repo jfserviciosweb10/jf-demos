@@ -6,7 +6,7 @@
 - **WhatsApp:** 5493515556026
 - **Email:** info@maquilladoraprostudio.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-05-21
+- **Generado:** 2026-05-29
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real

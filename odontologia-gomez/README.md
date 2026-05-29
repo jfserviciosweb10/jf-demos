@@ -6,7 +6,7 @@
 - **WhatsApp:** 5493496550064
 - **Email:** eliojg@gmail.com
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-05-21
+- **Generado:** 2026-05-29
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real

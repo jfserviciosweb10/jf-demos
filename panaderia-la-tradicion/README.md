@@ -6,7 +6,7 @@
 - **WhatsApp:** 5492915551031
 - **Email:** info@panaderialatradicion.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-05-21
+- **Generado:** 2026-05-29
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real
