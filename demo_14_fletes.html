@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlexFlete — Fletes & Mudanzas</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--azul:#1565c0;--azul-c:#1976d2;--naranja:#f57c00;--negro:#111;--gris:#f5f5f5;--texto:#333;--plata:#777;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overflow-x:hidden;}
+.jf-bar{background:#1a3a6b;padding:12px 40px;display:flex;align-items:center;justify-content:space-between;}
+.jf-l{font-weight:800;color:#fff;font-size:.95rem;}.jf-s{font-size:.7rem;color:rgba(255,255,255,.6);margin-top:2px;}
+.jf-cta{background:#25d366;color:#fff;padding:8px 20px;border-radius:50px;text-decoration:none;font-size:.8rem;font-weight:700;}
+.jf-av{background:#e3f2fd;border-bottom:2px solid var(--azul-c);padding:8px 40px;font-size:.72rem;color:var(--azul);text-align:center;}
+nav{position:sticky;top:0;z-index:100;background:var(--azul);padding:0 40px;display:flex;align-items:center;height:68px;gap:40px;box-shadow:0 2px 16px rgba(21,101,192,.3);}
+.nav-logo{font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:900;color:#fff;text-decoration:none;letter-spacing:.03em;}
+.nav-logo span{color:var(--naranja);}
+.nav-links{display:flex;gap:28px;list-style:none;margin-left:auto;}
+.nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover{color:var(--naranja);}
+.nav-btn{background:var(--naranja);color:#fff;padding:10px 22px;text-decoration:none;font-size:.82rem;font-weight:700;border-radius:4px;}
+/* HERO */
+.hero{background:var(--negro);min-height:85vh;position:relative;display:flex;align-items:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.25);}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,17,17,.95) 0%,rgba(17,17,17,.5) 55%,transparent 100%);}
+.hero-content{position:relative;z-index:2;padding:0 80px;max-width:700px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--naranja);color:#fff;padding:8px 18px;font-family:'Montserrat',sans-serif;font-size:.85rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:28px;}
+.hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(2.8rem,5.5vw,5rem);font-weight:900;line-height:1.05;color:#fff;margin-bottom:20px;}
+.hero h1 span{color:var(--naranja);}
+.hero-desc{color:rgba(255,255,255,.7);line-height:1.8;margin-bottom:40px;font-size:.96rem;max-width:460px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-naranja{padding:14px 32px;background:var(--naranja);color:#fff;text-decoration:none;font-family:'Montserrat',sans-serif;font-size:.92rem;font-weight:800;border-radius:4px;transition:all .3s;}
+.btn-naranja:hover{background:#ef6c00;}
+.btn-azul{padding:14px 32px;background:var(--azul);color:#fff;text-decoration:none;font-family:'Montserrat',sans-serif;font-size:.92rem;font-weight:700;border-radius:4px;transition:all .3s;}
+.btn-azul:hover{background:var(--azul-c);}
+.hero-trust{display:flex;gap:32px;margin-top:56px;padding-top:36px;border-top:1px solid rgba(255,255,255,.15);}
+.trust-item{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.8);font-size:.84rem;}
+.trust-icon{font-size:1.2rem;}
+/* COTIZADOR */
+.cotizador{background:var(--azul);padding:48px 40px;}
+.cotizador-inner{max-width:900px;margin:0 auto;text-align:center;}
+.cotizador h2{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:32px;}
+.cotiz-form{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:12px;align-items:end;}
+.form-g label{display:block;font-size:.72rem;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.form-g input,.form-g select{width:100%;padding:14px 16px;border:none;border-radius:4px;font-family:'Open Sans',sans-serif;font-size:.92rem;color:var(--texto);outline:none;}
+.btn-cotizar{padding:14px 28px;background:var(--naranja);color:#fff;border:none;border-radius:4px;font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:800;cursor:pointer;white-space:nowrap;transition:background .2s;}
+.btn-cotizar:hover{background:#ef6c00;}
+/* SERVICIOS */
+.servicios{padding:80px 40px;background:#fff;}
+.sec-title{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:800;text-align:center;margin-bottom:8px;}
+.sec-sub{text-align:center;color:var(--plata);margin-bottom:60px;}
+.serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1000px;margin:0 auto;}
+.serv-card{background:var(--gris);border-radius:8px;padding:36px 28px;transition:all .3s;border:2px solid transparent;}
+.serv-card:hover{border-color:var(--azul-c);box-shadow:0 8px 32px rgba(21,101,192,.12);transform:translateY(-4px);}
+.serv-icon{font-size:2.4rem;margin-bottom:16px;}
+.serv-card h3{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;margin-bottom:10px;color:var(--negro);}
+.serv-card p{font-size:.84rem;color:var(--plata);line-height:1.7;}
+/* GALERIA */
+.galeria{padding:80px 40px;background:var(--gris);}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:48px;}
+.gal-item{overflow:hidden;aspect-ratio:4/3;}
+.gal-item:last-child{grid-column:span 2;aspect-ratio:auto;}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s;min-height:240px;}
+.gal-item:hover img{transform:scale(1.06);}
+/* POR QUE */
+.por-que{background:var(--naranja);padding:80px 40px;}
+.por-que h2{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:800;color:#fff;text-align:center;margin-bottom:60px;}
+.pq-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1100px;margin:0 auto;}
+.pq-card{background:rgba(255,255,255,.15);border-radius:8px;padding:28px 20px;text-align:center;}
+.pq-icon{font-size:2.2rem;margin-bottom:14px;}
+.pq-card h3{font-family:'Montserrat',sans-serif;font-size:.9rem;font-weight:700;color:#fff;text-transform:uppercase;margin-bottom:8px;}
+.pq-card p{font-size:.82rem;color:rgba(255,255,255,.8);line-height:1.6;}
+/* CONTACTO */
+.contacto{padding:80px 40px;background:#fff;}
+.contacto-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.contacto h2{font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:800;margin-bottom:32px;}
+.contacto h2 span{color:var(--azul);}
+.dato{display:flex;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid #eee;}
+.dato-icon{font-size:1.2rem;width:28px;text-align:center;}
+.dato-label{font-size:.68rem;color:var(--plata);text-transform:uppercase;letter-spacing:.08em;}
+.dato-valor{font-size:.9rem;color:var(--negro);font-weight:500;margin-top:3px;}
+.camion-img{overflow:hidden;border-radius:8px;}
+.camion-img img{width:100%;aspect-ratio:4/3;object-fit:cover;}
+footer{padding:24px 40px;background:var(--negro);text-align:center;color:rgba(255,255,255,.3);font-size:.75rem;}
+@media(max-width:900px){nav{padding:0 20px;}.nav-links{display:none;}.hero-content{padding:0 30px;}.cotiz-form{grid-template-columns:1fr;}.serv-grid,.pq-grid{grid-template-columns:1fr;}.gal-grid{grid-template-columns:1fr;}.gal-item:last-child{grid-column:span 1;}.contacto-inner{grid-template-columns:1fr;}.jf-bar,.jf-av{padding:12px 20px;}}
+</style>
+</head>
+<body>
+<div class="jf-bar"><div><div class="jf-l">JF Servicios Web</div><div class="jf-s">Demo visual · Tu web se construye 100% con tus datos reales</div></div><a href="https://jfserviciosweb.com" class="jf-cta">¡La quiero!</a></div>
+<div class="jf-av">⚠️ Todos los datos y precios son ficticios — solo de ejemplo</div>
+<nav>
+  <a href="#" class="nav-logo">Flex<span>Flete</span> 🚛</a>
+  <ul class="nav-links"><li><a href="#servicios">Servicios</a></li><li><a href="#cotizador">Cotizar</a></li><li><a href="#contacto">Contacto</a></li></ul>
+  <a href="https://wa.me/5491155550000" class="nav-btn">💬 Cotizar ahora</a>
+</nav>
+<section class="hero">
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=85&fit=crop" alt="Camión de mudanza"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🚛 Fletes & Mudanzas profesionales</div>
+    <h1>Tu mudanza,<br><span>sin estrés</span></h1>
+    <p class="hero-desc">Fletes y mudanzas en Capital y GBA. Equipo profesional, camiones propios y embalaje incluido. Cotizá en minutos y movete tranquilo.</p>
+    <div class="hero-btns">
+      <a href="#cotizador" class="btn-naranja">Cotizar mudanza</a>
+      <a href="https://wa.me/5491155550000" class="btn-azul">💬 WhatsApp</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><span class="trust-icon">✅</span>Seguro incluido</div>
+      <div class="trust-item"><span class="trust-icon">📦</span>Embalaje profesional</div>
+      <div class="trust-item"><span class="trust-icon">⭐</span>4.9 en Google</div>
+    </div>
+  </div>
+</section>
+<div class="cotizador" id="cotizador">
+  <div class="cotizador-inner">
+    <h2>🧮 Cotizá tu mudanza en segundos</h2>
+    <div class="cotiz-form">
+      <div class="form-g"><label>Desde</label><input type="text" placeholder="Barrio o localidad de origen"></div>
+      <div class="form-g"><label>Hasta</label><input type="text" placeholder="Barrio o localidad de destino"></div>
+      <div class="form-g"><label>Tipo de mudanza</label><select><option>1 ambiente</option><option>2 ambientes</option><option>3 ambientes</option><option>Casa completa</option><option>Solo un mueble</option></select></div>
+      <button class="btn-cotizar">💬 Cotizar por WS</button>
+    </div>
+  </div>
+</div>
+<section class="servicios" id="servicios">
+  <div class="sec-title">Nuestros servicios</div>
+  <p class="sec-sub">Soluciones para cada tipo de traslado</p>
+  <div class="serv-grid">
+    <div class="serv-card"><div class="serv-icon">🏠</div><h3>Mudanzas residenciales</h3><p>Departamentos, casas y propiedades de todos los tamaños. Embalaje, carga, traslado y descarga incluidos.</p></div>
+    <div class="serv-card"><div class="serv-icon">🏢</div><h3>Mudanzas de oficinas</h3><p>Traslado de equipos, muebles de oficina y archivos. Minimizamos el tiempo fuera de operación.</p></div>
+    <div class="serv-card"><div class="serv-icon">🚐</div><h3>Fletes en el día</h3><p>Para un mueble, electrodoméstico o carga puntual. Rápido, seguro y al mejor precio del mercado.</p></div>
+    <div class="serv-card"><div class="serv-icon">📦</div><h3>Embalaje profesional</h3><p>Cajas, papel burbuja, protectores de muebles y todo el material necesario para proteger tus cosas.</p></div>
+    <div class="serv-card"><div class="serv-icon">🗃️</div><h3>Guardamuebles</h3><p>Almacenaje seguro de tus pertenencias por el tiempo que necesites. 24/7, con acceso controlado.</p></div>
+    <div class="serv-card"><div class="serv-icon">🛡️</div><h3>Seguro de carga</h3><p>Todos nuestros traslados incluyen seguro de carga. Tus bienes protegidos en todo momento.</p></div>
+  </div>
+</section>
+<section class="galeria" id="galeria">
+  <div class="sec-title">Nuestro equipo</div>
+  <p class="sec-sub">Camiones propios y equipo profesional capacitado</p>
+  <div class="gal-grid">
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1586864387789-628af9feed72?w=600&q=80&fit=crop" alt="Camión mudanza"></div>
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop" alt="Mudadores profesionales"></div>
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80&fit=crop" alt="Embalaje profesional"></div>
+  </div>
+</section>
+<section class="por-que">
+  <h2>¿Por qué elegirnos?</h2>
+  <div class="pq-grid">
+    <div class="pq-card"><div class="pq-icon">🏆</div><h3>10 años de experiencia</h3><p>Más de una década haciendo mudanzas en Capital y GBA. Conocemos cada barrio.</p></div>
+    <div class="pq-card"><div class="pq-icon">💰</div><h3>Precio justo</h3><p>Sin cargos ocultos. El precio que te cotizamos es el precio que pagás. Sin sorpresas.</p></div>
+    <div class="pq-card"><div class="pq-icon">⚡</div><h3>Disponibilidad inmediata</h3><p>Camiones disponibles para mudanzas de urgencia el mismo día que contactás.</p></div>
+    <div class="pq-card"><div class="pq-icon">💬</div><h3>Atención personalizada</h3><p>Te acompañamos desde la cotización hasta que el último mueble queda en su lugar.</p></div>
+  </div>
+</section>
+<section class="contacto" id="contacto">
+  <div class="contacto-inner">
+    <div>
+      <h2>Contactanos <span>ahora</span></h2>
+      <div class="dato"><span class="dato-icon">📞</span><div><div class="dato-label">Teléfono</div><div class="dato-valor">+54 9 11 5555-0000</div></div></div>
+      <div class="dato"><span class="dato-icon">💬</span><div><div class="dato-label">WhatsApp</div><div class="dato-valor">+54 9 11 5555-0000 (respuesta inmediata)</div></div></div>
+      <div class="dato"><span class="dato-icon">🕐</span><div><div class="dato-label">Horarios</div><div class="dato-valor">Lun–Sáb 7 a 20 hs · Dom con previo aviso</div></div></div>
+      <div class="dato"><span class="dato-icon">🗺️</span><div><div class="dato-label">Zona de cobertura</div><div class="dato-valor">CABA y Gran Buenos Aires completo</div></div></div>
+      <a href="https://wa.me/5491155550000" style="display:inline-flex;align-items:center;gap:8px;margin-top:24px;background:#25d366;color:#fff;padding:12px 28px;border-radius:4px;text-decoration:none;font-weight:700;font-family:'Montserrat',sans-serif;">💬 Cotizar por WhatsApp</a>
+    </div>
+    <div class="camion-img"><img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=85&fit=crop" alt="Flota de camiones"></div>
+  </div>
+</section>
+<footer>© 2025 FlexFlete — Todos los datos son ficticios. Demo por JF Servicios Web.</footer>
+<script>
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("keydown", e => {
+  if ((e.ctrlKey && ["u","s","a","p"].includes(e.key.toLowerCase())) || e.key === "F12")
+    e.preventDefault();
+});
+</script>
+</body>
+</html>

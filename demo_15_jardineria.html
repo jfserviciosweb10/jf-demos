@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verde Vivo — Jardinería & Paisajismo</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Merriweather:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--verde:#2d6a4f;--verde-c:#40916c;--verde-cl:#b7e4c7;--lima:#95d5b2;--crema:#f8faf7;--tierra:#6b4226;--texto:#2d3a2e;--plata:#7a8a7b;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:var(--crema);color:var(--texto);overflow-x:hidden;}
+.jf-bar{background:#1a3a6b;padding:12px 40px;display:flex;align-items:center;justify-content:space-between;}
+.jf-l{font-weight:800;color:#fff;font-size:.95rem;}.jf-s{font-size:.7rem;color:rgba(255,255,255,.6);margin-top:2px;}
+.jf-cta{background:#25d366;color:#fff;padding:8px 20px;border-radius:50px;text-decoration:none;font-size:.8rem;font-weight:700;}
+.jf-av{background:#ecf8f0;border-bottom:2px solid var(--verde-c);padding:8px 40px;font-size:.72rem;color:var(--verde);text-align:center;}
+nav{position:sticky;top:0;z-index:100;background:var(--verde);padding:0 60px;display:flex;align-items:center;height:70px;gap:40px;}
+.nav-logo{font-family:'Nunito',sans-serif;font-size:1.4rem;font-weight:800;color:#fff;text-decoration:none;letter-spacing:.03em;}
+.nav-logo span{color:var(--lima);}
+.nav-links{display:flex;gap:32px;list-style:none;margin-left:auto;}
+.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.85rem;font-weight:600;transition:color .2s;}
+.nav-links a:hover{color:var(--lima);}
+.nav-btn{background:var(--lima);color:var(--verde);padding:10px 26px;text-decoration:none;font-size:.85rem;font-weight:800;border-radius:50px;transition:all .3s;}
+.nav-btn:hover{background:#fff;}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh;}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:80px 60px;background:var(--verde);}
+.hero-tag{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--lima);font-weight:700;margin-bottom:20px;}
+.hero h1{font-family:'Merriweather',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:300;font-style:italic;line-height:1.2;color:#fff;margin-bottom:24px;}
+.hero h1 strong{font-style:normal;color:var(--lima);}
+.hero-desc{color:rgba(255,255,255,.75);line-height:1.9;margin-bottom:40px;font-size:.96rem;font-weight:300;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-lima{padding:14px 32px;background:var(--lima);color:var(--verde);text-decoration:none;font-size:.9rem;font-weight:800;border-radius:50px;transition:all .3s;}
+.btn-lima:hover{background:#fff;}
+.btn-out{padding:14px 32px;border:2px solid rgba(255,255,255,.3);color:#fff;text-decoration:none;font-size:.9rem;font-weight:600;border-radius:50px;transition:all .3s;}
+.btn-out:hover{border-color:var(--lima);color:var(--lima);}
+.hero-datos{display:flex;gap:40px;margin-top:48px;padding-top:36px;border-top:1px solid rgba(255,255,255,.15);}
+.dato-h{font-family:'Merriweather',serif;font-size:2rem;font-weight:300;color:var(--lima);}
+.dato-l{font-size:.72rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.1em;margin-top:4px;}
+.hero-right{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3px;overflow:hidden;}
+.hero-img{overflow:hidden;}
+.hero-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s;filter:brightness(.85);}
+.hero-img:hover img{transform:scale(1.06);}
+.hero-img:first-child{grid-column:span 2;}
+.servicios{padding:80px 60px;background:#fff;}
+.sec-h{text-align:center;margin-bottom:60px;}
+.sec-tag{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--verde-c);font-weight:700;margin-bottom:12px;}
+.sec-title{font-family:'Merriweather',serif;font-size:2rem;font-weight:300;font-style:italic;color:var(--verde);}
+.serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1000px;margin:0 auto;}
+.serv-card{background:var(--crema);border-radius:12px;padding:36px 28px;border:2px solid transparent;transition:all .3s;}
+.serv-card:hover{border-color:var(--verde-cl);box-shadow:0 12px 40px rgba(45,106,79,.12);transform:translateY(-4px);}
+.serv-icon{font-size:2.2rem;margin-bottom:16px;}
+.serv-card h3{font-size:1rem;font-weight:800;color:var(--verde);margin-bottom:10px;}
+.serv-card p{font-size:.84rem;color:var(--plata);line-height:1.7;}
+.galeria{padding:80px 60px;background:var(--crema);}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:48px;border-radius:12px;overflow:hidden;}
+.gal-item{overflow:hidden;aspect-ratio:1;}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s,filter .3s;filter:brightness(.85);}
+.gal-item:hover img{transform:scale(1.06);filter:brightness(1);}
+.gal-item:first-child{grid-column:span 2;aspect-ratio:auto;min-height:280px;}
+.mantenimiento{padding:80px 60px;background:var(--verde);color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.mant-content h2{font-family:'Merriweather',serif;font-size:2rem;font-weight:300;font-style:italic;margin-bottom:20px;}
+.mant-content p{color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:16px;}
+.mant-items{display:flex;flex-direction:column;gap:12px;margin-top:24px;}
+.mant-item{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,.1);padding:12px 16px;border-radius:8px;}
+.mant-item span{font-size:1.2rem;}
+.mant-item p{font-size:.85rem;margin:0;}
+.mant-img{overflow:hidden;border-radius:12px;}
+.mant-img img{width:100%;aspect-ratio:4/3;object-fit:cover;filter:brightness(.85);}
+.plantas{padding:80px 60px;background:#fff;}
+.pl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px;}
+.pl-card{text-align:center;padding:24px 16px;background:var(--crema);border-radius:12px;transition:all .3s;}
+.pl-card:hover{box-shadow:0 8px 24px rgba(45,106,79,.12);transform:translateY(-4px);}
+.pl-icon{font-size:2.4rem;margin-bottom:12px;}
+.pl-card h3{font-size:.9rem;font-weight:700;color:var(--verde);margin-bottom:6px;}
+.pl-card p{font-size:.78rem;color:var(--plata);line-height:1.6;}
+.contacto{padding:80px 60px;background:var(--crema);}
+.contacto-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+.contacto h2{font-family:'Merriweather',serif;font-size:1.8rem;font-weight:300;font-style:italic;color:var(--verde);margin-bottom:32px;}
+.dato{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(45,106,79,.1);}
+.dato-icon{font-size:1.1rem;width:28px;text-align:center;}
+.dato-label{font-size:.68rem;color:var(--plata);text-transform:uppercase;letter-spacing:.08em;}
+.dato-valor{font-size:.9rem;color:var(--texto);margin-top:3px;}
+.jardin-img{overflow:hidden;border-radius:12px;}
+.jardin-img img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:brightness(.85);}
+.btn-verde{display:inline-flex;align-items:center;gap:8px;margin-top:24px;background:var(--verde);color:#fff;padding:12px 28px;border-radius:50px;text-decoration:none;font-weight:700;}
+footer{padding:24px 60px;background:var(--verde);text-align:center;color:rgba(255,255,255,.35);font-size:.75rem;}
+@media(max-width:900px){nav{padding:0 20px;}.nav-links{display:none;}.hero{grid-template-columns:1fr;}.hero-right{display:none;}.hero-left{padding:40px 24px;}.servicios,.galeria,.mantenimiento,.plantas,.contacto{padding:60px 24px;}.serv-grid,.pl-grid{grid-template-columns:repeat(2,1fr);}.gal-grid{grid-template-columns:1fr;}.gal-item:first-child{grid-column:span 1;min-height:220px;}.mantenimiento,.contacto-inner{grid-template-columns:1fr;}.jf-bar,.jf-av{padding:12px 20px;}}
+</style>
+</head>
+<body>
+<div class="jf-bar"><div><div class="jf-l">JF Servicios Web</div><div class="jf-s">Demo visual · Tu web se construye 100% con tus datos reales</div></div><a href="https://jfserviciosweb.com" class="jf-cta">¡La quiero!</a></div>
+<div class="jf-av">⚠️ Todos los datos son ficticios — solo de ejemplo</div>
+<nav>
+  <a href="#" class="nav-logo">Verde <span>Vivo</span> 🌿</a>
+  <ul class="nav-links"><li><a href="#servicios">Servicios</a></li><li><a href="#galeria">Portfolio</a></li><li><a href="#mantenimiento">Mantenimiento</a></li><li><a href="#contacto">Contacto</a></li></ul>
+  <a href="#contacto" class="nav-btn">Pedir presupuesto</a>
+</nav>
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">🌿 Jardinería & Paisajismo</div>
+    <h1>Espacios verdes que<br><strong>inspiran y conectan</strong></h1>
+    <p class="hero-desc">Diseñamos y mantenemos jardines únicos para hogares, empresas y espacios públicos. Cada proyecto es una obra de arte viva que crece con el tiempo.</p>
+    <div class="hero-btns">
+      <a href="#servicios" class="btn-lima">Ver servicios</a>
+      <a href="#galeria" class="btn-out">Ver portfolio</a>
+    </div>
+    <div class="hero-datos">
+      <div><div class="dato-h">12+</div><div class="dato-l">Años de experiencia</div></div>
+      <div><div class="dato-h">400+</div><div class="dato-l">Jardines creados</div></div>
+      <div><div class="dato-h">50+</div><div class="dato-l">Clientes con mantenimiento</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=900&q=85&fit=crop" alt="Jardín diseñado"></div>
+    <div class="hero-img"><img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&q=80&fit=crop" alt="Plantas"></div>
+    <div class="hero-img"><img src="https://images.unsplash.com/photo-1558905586-5f8be1f9c70f?w=600&q=80&fit=crop" alt="Paisajismo"></div>
+  </div>
+</section>
+<section class="servicios" id="servicios">
+  <div class="sec-h"><div class="sec-tag">Lo que hacemos</div><div class="sec-title">Servicios de jardinería</div></div>
+  <div class="serv-grid">
+    <div class="serv-card"><div class="serv-icon">🌳</div><h3>Diseño de jardines</h3><p>Diseñamos jardines desde cero adaptados a tu espacio, clima y estilo de vida. Con planos y visualización 3D.</p></div>
+    <div class="serv-card"><div class="serv-icon">✂️</div><h3>Mantenimiento mensual</h3><p>Corte de césped, poda, fertilización y control de plagas. Tu jardín siempre impecable sin que te preocupes.</p></div>
+    <div class="serv-card"><div class="serv-icon">💧</div><h3>Riego automático</h3><p>Instalación de sistemas de riego por goteo y aspersión programables. Ahorrás agua y tiempo.</p></div>
+    <div class="serv-card"><div class="serv-icon">🌺</div><h3>Plantación & Trasplante</h3><p>Selección y plantación de especies según el espacio y la luz disponible. Incluye garantía de prendimiento.</p></div>
+    <div class="serv-card"><div class="serv-icon">🪨</div><h3>Paisajismo exterior</h3><p>Piedras, senderos, bordes, pérgolas y elementos decorativos que completan el diseño de tu jardín.</p></div>
+    <div class="serv-card"><div class="serv-icon">🌿</div><h3>Jardines verticales</h3><p>Paredes verdes para interiores y exteriores. La solución perfecta para espacios pequeños con poco suelo.</p></div>
+  </div>
+</section>
+<section class="galeria" id="galeria">
+  <div class="sec-h"><div class="sec-tag">Portfolio</div><div class="sec-title">Jardines que creamos</div></div>
+  <div class="gal-grid">
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&fit=crop" alt="Jardín diseñado completo"></div>
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80&fit=crop" alt="Jardín con flores"></div>
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=600&q=80&fit=crop" alt="Paisajismo exterior"></div>
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&q=80&fit=crop" alt="Plantas y vegetación"></div>
+  </div>
+</section>
+<section class="mantenimiento" id="mantenimiento">
+  <div class="mant-content">
+    <h2>Mantenimiento mensual</h2>
+    <p>Tu jardín es un ser vivo que necesita cuidados regulares. Nuestro servicio de mantenimiento incluye todo lo que necesitás para que siempre esté perfecto.</p>
+    <div class="mant-items">
+      <div class="mant-item"><span>✅</span><p>Corte y bordeado de césped</p></div>
+      <div class="mant-item"><span>✅</span><p>Poda de arbustos y plantas ornamentales</p></div>
+      <div class="mant-item"><span>✅</span><p>Fertilización estacional</p></div>
+      <div class="mant-item"><span>✅</span><p>Control de plagas y enfermedades</p></div>
+      <div class="mant-item"><span>✅</span><p>Retiro de residuos vegetales</p></div>
+    </div>
+  </div>
+  <div class="mant-img"><img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=700&q=85&fit=crop" alt="Jardinero trabajando"></div>
+</section>
+<section class="contacto" id="contacto">
+  <div class="contacto-inner">
+    <div>
+      <h2>Pedí tu presupuesto</h2>
+      <div class="dato"><span class="dato-icon">📍</span><div><div class="dato-label">Zona de cobertura</div><div class="dato-valor">CABA, GBA Norte y GBA Oeste</div></div></div>
+      <div class="dato"><span class="dato-icon">📞</span><div><div class="dato-label">Teléfono</div><div class="dato-valor">+54 9 11 5555-0000</div></div></div>
+      <div class="dato"><span class="dato-icon">🕐</span><div><div class="dato-label">Horarios</div><div class="dato-valor">Lun–Sáb 7 a 18 hs</div></div></div>
+      <div class="dato"><span class="dato-icon">📸</span><div><div class="dato-label">Instagram</div><div class="dato-valor">@verdevivo.jardines</div></div></div>
+      <a href="https://wa.me/5491155550000" class="btn-verde">💬 Consultar por WhatsApp</a>
+    </div>
+    <div class="jardin-img"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=85&fit=crop" alt="Jardín hermoso"></div>
+  </div>
+</section>
+<footer>© 2025 Verde Vivo — Todos los datos son ficticios. Demo por JF Servicios Web.</footer>
+<script>
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("keydown", e => {
+  if ((e.ctrlKey && ["u","s","a","p"].includes(e.key.toLowerCase())) || e.key === "F12")
+    e.preventDefault();
+});
+</script>
+</body>
+</html>
