@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TallerPro — Mecánica Automotriz</title>
+<link href="https://fonts.googleapis.com/css2?family=Industry:wght@400;700&family=Rajdhani:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--naranja:#e85d04;--naranja-c:#f77f00;--negro:#111;--gris:#1e1e1e;--gris2:#2a2a2a;--plata:#9e9e9e;--blanco:#f5f5f5;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Open Sans',sans-serif;background:var(--negro);color:var(--blanco);overflow-x:hidden;}
+.jf-bar{background:#1a3a6b;padding:12px 40px;display:flex;align-items:center;justify-content:space-between;}
+.jf-l{font-weight:800;color:#fff;font-size:.95rem;}
+.jf-s{font-size:.7rem;color:rgba(255,255,255,.6);margin-top:2px;}
+.jf-cta{background:#25d366;color:#fff;padding:8px 20px;border-radius:50px;text-decoration:none;font-size:.8rem;font-weight:700;}
+.jf-av{background:rgba(232,93,4,.1);border-bottom:1px solid rgba(232,93,4,.3);padding:8px 40px;font-size:.72rem;color:var(--naranja-c);text-align:center;}
+nav{position:sticky;top:0;z-index:100;background:rgba(17,17,17,.97);backdrop-filter:blur(10px);border-bottom:3px solid var(--naranja);padding:0 40px;display:flex;align-items:center;height:68px;gap:40px;}
+.nav-logo{font-family:'Rajdhani',sans-serif;font-size:1.5rem;font-weight:700;color:var(--blanco);text-decoration:none;letter-spacing:.06em;}
+.nav-logo span{color:var(--naranja);}
+.nav-links{display:flex;gap:28px;list-style:none;margin-left:auto;}
+.nav-links a{color:var(--plata);text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover{color:var(--naranja);}
+.nav-urgencia{background:var(--naranja);color:#fff;padding:10px 20px;text-decoration:none;font-size:.8rem;font-weight:700;letter-spacing:.06em;border-radius:4px;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(232,93,4,.4);}50%{box-shadow:0 0 0 8px rgba(232,93,4,0);}}
+
+.hero{min-height:88vh;position:relative;display:flex;align-items:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.2);}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,17,17,.95) 0%,rgba(17,17,17,.6) 55%,transparent 100%);}
+.hero-content{position:relative;z-index:2;padding:0 80px;max-width:680px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--naranja);color:#fff;padding:6px 16px;font-family:'Rajdhani',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px;}
+.hero h1{font-family:'Rajdhani',sans-serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:700;line-height:1;letter-spacing:.03em;margin-bottom:20px;text-transform:uppercase;}
+.hero h1 span{color:var(--naranja);}
+.hero-desc{color:var(--plata);line-height:1.8;margin-bottom:40px;font-size:.96rem;font-weight:300;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-naranja{padding:14px 36px;background:var(--naranja);color:#fff;text-decoration:none;font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:4px;transition:all .3s;}
+.btn-naranja:hover{background:var(--naranja-c);}
+.btn-out{padding:14px 36px;border:2px solid var(--plata);color:var(--blanco);text-decoration:none;font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:4px;transition:all .3s;}
+.btn-out:hover{border-color:var(--naranja);color:var(--naranja);}
+.hero-stats{display:flex;gap:48px;margin-top:56px;padding-top:36px;border-top:1px solid rgba(158,158,158,.2);}
+.stat{text-align:left;}
+.stat-n{font-family:'Rajdhani',sans-serif;font-size:2.4rem;font-weight:700;color:var(--naranja);line-height:1;}
+.stat-l{font-size:.72rem;color:var(--plata);text-transform:uppercase;letter-spacing:.08em;margin-top:4px;}
+
+.urgencia-bar{background:var(--naranja);padding:16px 40px;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;}
+.urgencia-bar p{color:#fff;font-weight:700;font-size:.95rem;}
+.urgencia-tel{color:#fff;text-decoration:none;font-family:'Rajdhani',sans-serif;font-size:1.4rem;font-weight:700;background:rgba(0,0,0,.2);padding:8px 20px;border-radius:4px;}
+
+.servicios{padding:80px 40px;background:var(--gris);}
+.servicios h2{font-family:'Rajdhani',sans-serif;font-size:2.8rem;font-weight:700;text-align:center;text-transform:uppercase;margin-bottom:8px;}
+.servicios h2 span{color:var(--naranja);}
+.servicios>p{text-align:center;color:var(--plata);margin-bottom:60px;}
+.serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;max-width:1100px;margin:0 auto;}
+.serv-card{background:var(--negro);padding:36px 28px;transition:all .3s;border-left:3px solid transparent;}
+.serv-card:hover{border-left-color:var(--naranja);background:var(--gris2);}
+.serv-icon{font-size:2rem;margin-bottom:16px;}
+.serv-card h3{font-family:'Rajdhani',sans-serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px;}
+.serv-card p{font-size:.84rem;color:var(--plata);line-height:1.7;font-weight:300;}
+
+.galeria{padding:80px 40px;background:var(--negro);}
+.galeria h2{font-family:'Rajdhani',sans-serif;font-size:2.8rem;font-weight:700;text-align:center;text-transform:uppercase;margin-bottom:8px;}
+.galeria h2 span{color:var(--naranja);}
+.galeria>p{text-align:center;color:var(--plata);margin-bottom:48px;}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;}
+.gal-item{overflow:hidden;aspect-ratio:4/3;}
+.gal-item:first-child{grid-column:span 2;aspect-ratio:auto;min-height:300px;}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s,filter .3s;filter:brightness(.7);}
+.gal-item:hover img{transform:scale(1.06);filter:brightness(1);}
+
+.por-que{padding:80px 40px;background:var(--gris);}
+.por-que h2{font-family:'Rajdhani',sans-serif;font-size:2.8rem;font-weight:700;text-align:center;text-transform:uppercase;margin-bottom:60px;}
+.por-que h2 span{color:var(--naranja);}
+.pq-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+.pq-card{background:var(--negro);padding:32px 24px;text-align:center;border-radius:4px;transition:all .3s;}
+.pq-card:hover{background:var(--gris2);}
+.pq-icon{font-size:2.4rem;margin-bottom:16px;}
+.pq-card h3{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
+.pq-card p{font-size:.82rem;color:var(--plata);line-height:1.7;}
+
+.contacto{padding:80px 40px;background:var(--negro);}
+.contacto-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.contacto h2{font-family:'Rajdhani',sans-serif;font-size:2.4rem;font-weight:700;text-transform:uppercase;margin-bottom:32px;}
+.contacto h2 span{color:var(--naranja);}
+.dato{display:flex;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid rgba(158,158,158,.1);}
+.dato-icon{font-size:1.2rem;width:28px;text-align:center;}
+.dato-label{font-size:.68rem;color:var(--plata);text-transform:uppercase;letter-spacing:.08em;}
+.dato-valor{font-size:.9rem;margin-top:3px;}
+.taller-img{overflow:hidden;border-radius:4px;}
+.taller-img img{width:100%;aspect-ratio:4/3;object-fit:cover;filter:brightness(.8);}
+footer{padding:24px 40px;background:var(--gris);text-align:center;color:rgba(245,245,245,.25);font-size:.75rem;border-top:1px solid rgba(232,93,4,.2);}
+@media(max-width:900px){
+  nav{padding:0 20px;}.nav-links{display:none;}
+  .hero-content{padding:0 30px;}
+  .serv-grid{grid-template-columns:1fr;}
+  .gal-grid{grid-template-columns:1fr;}
+  .gal-item:first-child{grid-column:span 1;min-height:220px;}
+  .pq-grid{grid-template-columns:repeat(2,1fr);}
+  .contacto-inner{grid-template-columns:1fr;}
+  .jf-bar,.jf-av{padding:12px 20px;}
+}
+</style>
+</head>
+<body>
+<div class="jf-bar"><div><div class="jf-l">JF Servicios Web</div><div class="jf-s">Demo visual · Tu web se construye 100% con tus datos reales</div></div><a href="https://jfserviciosweb.com" class="jf-cta">¡La quiero!</a></div>
+<div class="jf-av">⚠️ Todos los datos y precios son ficticios — solo de ejemplo</div>
+<nav>
+  <a href="#" class="nav-logo">Taller<span>Pro</span></a>
+  <ul class="nav-links"><li><a href="#servicios">Servicios</a></li><li><a href="#por-que">Por qué elegirnos</a></li><li><a href="#contacto">Contacto</a></li></ul>
+  <a href="tel:+5491155550000" class="nav-urgencia">🚨 Urgencias: 11 5555-0000</a>
+</nav>
+<section class="hero">
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1600&q=85&fit=crop" alt="Taller mecánico"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🔧 Mecánica General & Especializada</div>
+    <h1>Tu auto en<br><span>las mejores manos</span></h1>
+    <p class="hero-desc">Taller mecánico integral con tecnología de diagnóstico de última generación. Trabajamos con todas las marcas y garantizamos nuestros trabajos.</p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn-naranja">Pedir turno</a>
+      <a href="#servicios" class="btn-out">Ver servicios</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-n">20+</div><div class="stat-l">Años de trayectoria</div></div>
+      <div class="stat"><div class="stat-n">5.000+</div><div class="stat-l">Autos reparados</div></div>
+      <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Garantía de trabajo</div></div>
+    </div>
+  </div>
+</section>
+<div class="urgencia-bar">
+  <p>🚨 ¿Quedaste en la ruta o necesitás asistencia urgente?</p>
+  <a href="tel:+5491155550000" class="urgencia-tel">📞 11 5555-0000 (24 hs)</a>
+</div>
+<section class="servicios" id="servicios">
+  <h2>Nuestros <span>servicios</span></h2>
+  <p>Trabajamos con todas las marcas. Piezas originales y garantizadas.</p>
+  <div class="serv-grid">
+    <div class="serv-card"><div class="serv-icon">🔍</div><h3>Diagnóstico computarizado</h3><p>Escáner de última generación para detectar fallas eléctricas, electrónicas y mecánicas con precisión.</p></div>
+    <div class="serv-card"><div class="serv-icon">🛢️</div><h3>Service & Mantenimiento</h3><p>Cambio de aceite, filtros, bujías y todo el mantenimiento preventivo para mantener tu auto en óptimas condiciones.</p></div>
+    <div class="serv-card"><div class="serv-icon">🔧</div><h3>Motor & Transmisión</h3><p>Reparación y puesta a punto de motores, cajas de cambio y diferencial. Trabajamos con la precisión que merece tu motor.</p></div>
+    <div class="serv-card"><div class="serv-icon">🛞</div><h3>Suspensión & Dirección</h3><p>Revisión y reparación de amortiguadores, trapecios, rótulas y alineación y balanceo de ruedas.</p></div>
+    <div class="serv-card"><div class="serv-icon">🔴</div><h3>Frenos</h3><p>Pastillas, discos, tambores y líquido de frenos. Tu seguridad es lo primero — no esperés al último momento.</p></div>
+    <div class="serv-card"><div class="serv-icon">❄️</div><h3>Aire Acondicionado</h3><p>Recarga de gas, reparación de compresores y limpieza del sistema de climatización de tu vehículo.</p></div>
+  </div>
+</section>
+<section class="galeria" id="galeria">
+  <h2>Nuestro <span>taller</span></h2>
+  <p>Instalaciones modernas y equipadas para dar el mejor servicio</p>
+  <div class="gal-grid">
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&fit=crop" alt="Taller mecánico interior"></div>
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1632823469850-2f77dd9c7f93?w=600&q=80&fit=crop" alt="Mecánico trabajando"></div>
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1612544448445-b8232cff3b6c?w=600&q=80&fit=crop" alt="Diagnóstico computarizado"></div>
+  </div>
+</section>
+<section class="por-que" id="por-que">
+  <h2>¿Por qué elegirnos?</h2>
+  <div class="pq-grid">
+    <div class="pq-card"><div class="pq-icon">🏆</div><h3>20 años de experiencia</h3><p>Dos décadas reparando autos con los mismos valores: honestidad, calidad y respeto por el cliente.</p></div>
+    <div class="pq-card"><div class="pq-icon">📋</div><h3>Presupuesto sin cargo</h3><p>Te diagnósticamos el problema y te damos un presupuesto detallado antes de arrancar cualquier trabajo.</p></div>
+    <div class="pq-card"><div class="pq-icon">✅</div><h3>Garantía por escrito</h3><p>Todos nuestros trabajos tienen garantía. Si algo falla, lo solucionamos sin costo adicional.</p></div>
+    <div class="pq-card"><div class="pq-icon">💳</div><h3>Todas las tarjetas</h3><p>Aceptamos efectivo, transferencia y todas las tarjetas de crédito y débito en cuotas sin interés.</p></div>
+  </div>
+</section>
+<section class="contacto" id="contacto">
+  <div class="contacto-inner">
+    <div>
+      <h2>Pedí tu <span>turno</span></h2>
+      <div class="dato"><div class="dato-icon">📍</div><div><div class="dato-label">Dirección</div><div class="dato-valor">Av. San Martín 4567, Buenos Aires</div></div></div>
+      <div class="dato"><div class="dato-icon">📞</div><div><div class="dato-label">Teléfono / Urgencias</div><div class="dato-valor">+54 9 11 5555-0000 (24 hs)</div></div></div>
+      <div class="dato"><div class="dato-icon">🕐</div><div><div class="dato-label">Horarios taller</div><div class="dato-valor">Lun–Vie 8 a 18 hs · Sáb 8 a 13 hs</div></div></div>
+      <div class="dato"><div class="dato-icon">💬</div><div><div class="dato-label">WhatsApp</div><div class="dato-valor">Consultás, turnos y presupuestos</div></div></div>
+      <a href="https://wa.me/5491155550000" style="display:inline-block;margin-top:24px;padding:12px 28px;background:#25d366;color:#fff;text-decoration:none;font-weight:700;border-radius:4px;font-family:'Rajdhani',sans-serif;font-size:1.1rem;letter-spacing:.05em;">💬 WhatsApp</a>
+    </div>
+    <div class="taller-img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=85&fit=crop" alt="Mecánico profesional"></div>
+  </div>
+</section>
+<footer>© 2025 TallerPro — Todos los datos son ficticios. Demo por JF Servicios Web.</footer>
+<script>
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("keydown", e => {
+  if ((e.ctrlKey && ["u","s","a","p"].includes(e.key.toLowerCase())) || e.key === "F12")
+    e.preventDefault();
+});
+</script>
+</body>
+</html>
