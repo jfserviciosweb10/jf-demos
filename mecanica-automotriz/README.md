@@ -6,7 +6,7 @@
 - **WhatsApp:** 5491155550046
 - **Email:** info@tallerpro.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-07-10
+- **Generado:** 2026-07-13
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real

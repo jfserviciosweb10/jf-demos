@@ -6,7 +6,7 @@
 - **WhatsApp:** 5491155550049
 - **Email:** info@verdevivo.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-07-10
+- **Generado:** 2026-07-13
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real
