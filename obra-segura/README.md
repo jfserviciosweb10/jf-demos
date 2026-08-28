@@ -3,10 +3,10 @@
 ## Datos del cliente
 - **Dominio:** obrasegurasf.com.ar
 - **Ciudad:** Santa Fe, Santa Fe
-- **WhatsApp:** 5493425550030
+- **WhatsApp:** 5493496591636
 - **Email:** info@obrasegurasf.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-07-13
+- **Generado:** 2026-08-28
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real

@@ -3,10 +3,10 @@
 ## Datos del cliente
 - **Dominio:** estanciapampagrnde.com.ar
 - **Ciudad:** General Villegas, Buenos Aires
-- **WhatsApp:** 5493388554014
+- **WhatsApp:** 5493496591636
 - **Email:** info@estanciapampagrnde.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-07-13
+- **Generado:** 2026-08-28
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real

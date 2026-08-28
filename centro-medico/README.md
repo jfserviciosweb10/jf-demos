@@ -3,10 +3,10 @@
 ## Datos del cliente
 - **Dominio:** medicentroba.com.ar
 - **Ciudad:** Buenos Aires, CABA
-- **WhatsApp:** 5491155550051
+- **WhatsApp:** 5493496591636
 - **Email:** turnos@medicentro.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-07-13
+- **Generado:** 2026-08-28
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real

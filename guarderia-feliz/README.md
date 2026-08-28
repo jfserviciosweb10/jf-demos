@@ -3,10 +3,10 @@
 ## Datos del cliente
 - **Dominio:** guarderia-feliz.com.ar
 - **Ciudad:** Rosario, Santa Fe
-- **WhatsApp:** 5493415550020
+- **WhatsApp:** 5493496591636
 - **Email:** info@guarderia-feliz.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-07-13
+- **Generado:** 2026-08-28
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real

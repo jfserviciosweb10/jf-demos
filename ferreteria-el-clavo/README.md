@@ -3,10 +3,10 @@
 ## Datos del cliente
 - **Dominio:** ferreteriaelclavo.com.ar
 - **Ciudad:** Rafaela, Santa Fe
-- **WhatsApp:** 5493492557017
+- **WhatsApp:** 5493496591636
 - **Email:** info@ferreteriaelclavo.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-07-13
+- **Generado:** 2026-08-28
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real

@@ -3,10 +3,10 @@
 ## Datos del cliente
 - **Dominio:** deliveryexpress24.com.ar
 - **Ciudad:** Buenos Aires, CABA
-- **WhatsApp:** 5491155522012
+- **WhatsApp:** 5493496591636
 - **Email:** info@deliveryexpress24.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-07-13
+- **Generado:** 2026-08-28
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real

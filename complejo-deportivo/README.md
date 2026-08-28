@@ -3,10 +3,10 @@
 ## Datos del cliente
 - **Dominio:** complejoarenamdp.com.ar
 - **Ciudad:** Mar del Plata, Buenos Aires
-- **WhatsApp:** 5492235559009
+- **WhatsApp:** 5493496591636
 - **Email:** info@complejoarenamdp.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-07-13
+- **Generado:** 2026-08-28
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real

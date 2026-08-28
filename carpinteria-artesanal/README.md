@@ -3,10 +3,10 @@
 ## Datos del cliente
 - **Dominio:** carpinteriamarcoscp.com.ar
 - **Ciudad:** Villa Carlos Paz, Córdoba
-- **WhatsApp:** 5493541555505
+- **WhatsApp:** 5493496591636
 - **Email:** info@carpinteriamarcoscp.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-07-13
+- **Generado:** 2026-08-28
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real

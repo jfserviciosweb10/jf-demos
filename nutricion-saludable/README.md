@@ -3,10 +3,10 @@
 ## Datos del cliente
 - **Dominio:** nutriciongomez.com.ar
 - **Ciudad:** Rosario, Santa Fe
-- **WhatsApp:** 5493415559029
+- **WhatsApp:** 5493496591636
 - **Email:** info@nutriciongomez.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-07-13
+- **Generado:** 2026-08-28
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real

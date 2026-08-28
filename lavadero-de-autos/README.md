@@ -3,10 +3,10 @@
 ## Datos del cliente
 - **Dominio:** lavaderoPremiumsalta.com.ar
 - **Ciudad:** Salta, Salta
-- **WhatsApp:** 5493875554024
+- **WhatsApp:** 5493496591636
 - **Email:** info@lavaderoPremiumsalta.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-07-13
+- **Generado:** 2026-08-28
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real

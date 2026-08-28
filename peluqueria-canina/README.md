@@ -3,10 +3,10 @@
 ## Datos del cliente
 - **Dominio:** happydogcba.com.ar
 - **Ciudad:** Córdoba, Córdoba
-- **WhatsApp:** 5493515552032
+- **WhatsApp:** 5493496591636
 - **Email:** info@happydogcba.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-07-13
+- **Generado:** 2026-08-28
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real

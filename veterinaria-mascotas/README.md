@@ -3,10 +3,10 @@
 ## Datos del cliente
 - **Dominio:** veterinariamascoTasMza.com.ar
 - **Ciudad:** Mendoza, Mendoza
-- **WhatsApp:** 5492615552042
+- **WhatsApp:** 5493496591636
 - **Email:** info@veterinariamascoTasMza.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-07-13
+- **Generado:** 2026-08-28
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real

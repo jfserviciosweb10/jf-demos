@@ -3,10 +3,10 @@
 ## Datos del cliente
 - **Dominio:** hotelcumbrecita.com.ar
 - **Ciudad:** La Cumbrecita, Córdoba
-- **WhatsApp:** 5493515550192
+- **WhatsApp:** 5493496591636
 - **Email:** contacto@hotelcumbrecita.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-07-13
+- **Generado:** 2026-08-28
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real

@@ -3,10 +3,10 @@
 ## Datos del cliente
 - **Dominio:** estudioformacba.com.ar
 - **Ciudad:** Córdoba, Córdoba
-- **WhatsApp:** 5493515553013
+- **WhatsApp:** 5493496591636
 - **Email:** info@estudioformacba.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-07-13
+- **Generado:** 2026-08-28
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real

@@ -3,10 +3,10 @@
 ## Datos del cliente
 - **Dominio:** cineestrellatuc.com.ar
 - **Ciudad:** Tucumán, Tucumán
-- **WhatsApp:** 5493815558008
+- **WhatsApp:** 5493496591636
 - **Email:** info@cineestrellatuc.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-07-13
+- **Generado:** 2026-08-28
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real

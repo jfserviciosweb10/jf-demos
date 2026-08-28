@@ -3,10 +3,10 @@
 ## Datos del cliente
 - **Dominio:** movewellmza.com.ar
 - **Ciudad:** Mendoza, Mendoza
-- **WhatsApp:** 5492615558018
+- **WhatsApp:** 5493496591636
 - **Email:** info@movewellmza.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-07-13
+- **Generado:** 2026-08-28
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real

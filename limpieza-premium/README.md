@@ -3,10 +3,10 @@
 ## Datos del cliente
 - **Dominio:** limpiezapremiumba.com.ar
 - **Ciudad:** Buenos Aires, CABA
-- **WhatsApp:** 5491155555025
+- **WhatsApp:** 5493496591636
 - **Email:** info@limpiezapremiumba.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-07-13
+- **Generado:** 2026-08-28
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real
