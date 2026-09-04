@@ -19,7 +19,7 @@
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
-
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#1A1A2E"><link rel="apple-touch-icon" href="icons/icon-192.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LegalService","name":"Lex & Partners","description":"Estudio jurídico en Buenos Aires. Derecho societario, laboral, inmobiliario y familia.","url":"https://lexpartnersba.com.ar","telephone":"+54 9 3496 591636","email":"consultas@lexpartners.com.ar","image":"https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&q=85&fit=crop","address":{"@type":"PostalAddress","addressLocality":"Buenos Aires, CABA","addressCountry":"AR"},"openingHours":"Lun–Vie: 9:00–19:00, con cita previa","priceRange":"$$","hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Derecho societario","description":"Constitución de sociedades, contratos y gobierno corporativo.","provider":{"@type":"LegalService","name":"Lex & Partners"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Derecho laboral","description":"Defensa en juicios laborales y negociaciones colectivas.","provider":{"@type":"LegalService","name":"Lex & Partners"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Derecho inmobiliario","description":"Compraventas, alquileres y sucesiones.","provider":{"@type":"LegalService","name":"Lex & Partners"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Familia y sucesiones","description":"Divorcios, alimentos y herencias con acompañamiento integral.","provider":{"@type":"LegalService","name":"Lex & Partners"}}}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cómo funciona la primera consulta?","acceptedAnswer":{"@type":"Answer","text":"La primera consulta nos permite conocer tu caso y orientarte sobre las opciones disponibles. Pedí turno por WhatsApp."}},{"@type":"Question","name":"¿Cuánto cobran?","acceptedAnswer":{"@type":"Answer","text":"Los honorarios dependen del caso. Te damos un presupuesto claro en la primera consulta, sin compromisos."}},{"@type":"Question","name":"¿En qué áreas del derecho trabajan?","acceptedAnswer":{"@type":"Answer","text":"Trabajamos en derecho civil, laboral, familia, comercial y más. Consultanos por tu caso específico."}},{"@type":"Question","name":"¿Atienden de manera online?","acceptedAnswer":{"@type":"Answer","text":"Sí, ofrecemos consultas virtuales para clientes que no pueden acercarse al estudio."}},{"@type":"Question","name":"¿Tienen experiencia en casos similares al mío?","acceptedAnswer":{"@type":"Answer","text":"En la primera consulta te contamos nuestra experiencia en casos parecidos al tuyo."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://lexpartnersba.com.ar/"},{"@type":"ListItem","position":2,"name":"Lex & Partners","item":"https://lexpartnersba.com.ar/"}]}</script>
@@ -926,6 +926,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 document.addEventListener('contextmenu',e=>e.preventDefault());
 
 
+/* PWA Service Worker */
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('./sw.js').catch(()=>{});
+}
 
 /* QR Code */
 (function(){

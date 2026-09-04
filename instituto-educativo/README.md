@@ -6,7 +6,7 @@
 - **WhatsApp:** 5493496591636
 - **Email:** secretaria@institutosanmartin.edu.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-08-28
+- **Generado:** 2026-09-04
 
 ## ✅ Checklist antes de publicar
 - [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real

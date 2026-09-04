@@ -19,7 +19,7 @@
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
-
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#E9C46A"><link rel="apple-touch-icon" href="icons/icon-192.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeGoodsStore","name":"Ferretería El Clavo","description":"Ferretería en Rafaela, Santa Fe. Herramientas y materiales con asesoramiento personalizado.","url":"https://ferreteriaelclavo.com.ar","telephone":"+54 9 3496 591636","email":"info@ferreteriaelclavo.com.ar","image":"https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1600&q=85&fit=crop","address":{"@type":"PostalAddress","addressLocality":"Rafaela, Santa Fe","addressCountry":"AR"},"openingHours":"Lun–Vie: 7:30–19:00 / Sáb: 7:30–13:00","priceRange":"$$","hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Herramientas","description":"Manuales y eléctricas de las mejores marcas.","provider":{"@type":"HomeGoodsStore","name":"Ferretería El Clavo"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Electricidad","description":"Cables, llaves, tomacorrientes y tableros.","provider":{"@type":"HomeGoodsStore","name":"Ferretería El Clavo"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Plomería","description":"Caños, conexiones y grifería.","provider":{"@type":"HomeGoodsStore","name":"Ferretería El Clavo"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pinturería","description":"Pinturas, barnices, esmaltes y accesorios.","provider":{"@type":"HomeGoodsStore","name":"Ferretería El Clavo"}}}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Hacen entregas a domicilio?","acceptedAnswer":{"@type":"Answer","text":"Sí, realizamos entregas en la zona. Consultanos disponibilidad y costos por WhatsApp."}},{"@type":"Question","name":"¿Venden por mayor?","acceptedAnswer":{"@type":"Answer","text":"Sí, atendemos tanto a clientes minoristas como a constructoras y profesionales por mayor."}},{"@type":"Question","name":"¿Tienen servicio de corte de materiales?","acceptedAnswer":{"@type":"Answer","text":"Sí, ofrecemos corte de madera, vidrio y otros materiales. Consultanos para más detalles."}},{"@type":"Question","name":"¿Aceptan pedidos por encargo?","acceptedAnswer":{"@type":"Answer","text":"Sí, pedimos productos que no tengamos en stock. Consultanos el plazo de entrega."}},{"@type":"Question","name":"¿Tienen asesoramiento técnico?","acceptedAnswer":{"@type":"Answer","text":"Nuestro equipo está capacitado para asesorarte en materiales y herramientas según tu proyecto."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ferreteriaelclavo.com.ar/"},{"@type":"ListItem","position":2,"name":"Ferretería El Clavo","item":"https://ferreteriaelclavo.com.ar/"}]}</script>
@@ -926,6 +926,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 document.addEventListener('contextmenu',e=>e.preventDefault());
 
 
+/* PWA Service Worker */
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('./sw.js').catch(()=>{});
+}
 
 /* QR Code */
 (function(){

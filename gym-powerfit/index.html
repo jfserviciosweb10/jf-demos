@@ -19,7 +19,7 @@
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
-
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#E63946"><link rel="apple-touch-icon" href="icons/icon-192.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HealthClub","name":"Gym PowerFit","description":"Gimnasio en Buenos Aires. Musculación, clases grupales y nutrición.","url":"https://gympowerfit.com.ar","telephone":"+54 9 3496 591636","email":"info@gympowerfit.com.ar","image":"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=85&fit=crop","address":{"@type":"PostalAddress","addressLocality":"Buenos Aires, CABA","addressCountry":"AR"},"openingHours":"Lun–Vie: 6:00–23:00 / Sáb–Dom: 8:00–20:00","priceRange":"$$","hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Musculación","description":"Equipos de última generación y rutinas personalizadas.","provider":{"@type":"HealthClub","name":"Gym PowerFit"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Functional","description":"Entrenamiento en grupos reducidos con alta intensidad.","provider":{"@type":"HealthClub","name":"Gym PowerFit"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Clases grupales","description":"Zumba, yoga, pilates y spinning con horarios flexibles.","provider":{"@type":"HealthClub","name":"Gym PowerFit"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Nutrición","description":"Asesoramiento para alcanzar tus metas.","provider":{"@type":"HealthClub","name":"Gym PowerFit"}}}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Puedo probar antes de inscribirme?","acceptedAnswer":{"@type":"Answer","text":"Sí, ofrecemos una clase de prueba gratuita. Escribinos por WhatsApp para coordinar."}},{"@type":"Question","name":"¿Tienen clases grupales?","acceptedAnswer":{"@type":"Answer","text":"Sí, contamos con clases de zumba, yoga, pilates, funcional y más. Consultanos el horario actualizado."}},{"@type":"Question","name":"¿Hay instructores disponibles todo el día?","acceptedAnswer":{"@type":"Answer","text":"Contamos con instructores capacitados en todos los turnos para orientarte y cuidar tu técnica."}},{"@type":"Question","name":"¿Cuánto cuesta la membresía?","acceptedAnswer":{"@type":"Answer","text":"Tenemos planes mensuales, trimestrales y anuales. Escribinos para conocer la propuesta actual."}},{"@type":"Question","name":"¿Tienen estacionamiento?","acceptedAnswer":{"@type":"Answer","text":"Sí, contamos con estacionamiento disponible para los socios del gimnasio."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://gympowerfit.com.ar/"},{"@type":"ListItem","position":2,"name":"Gym PowerFit","item":"https://gympowerfit.com.ar/"}]}</script>
@@ -926,6 +926,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 document.addEventListener('contextmenu',e=>e.preventDefault());
 
 
+/* PWA Service Worker */
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('./sw.js').catch(()=>{});
+}
 
 /* QR Code */
 (function(){

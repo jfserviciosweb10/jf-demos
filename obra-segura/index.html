@@ -19,7 +19,7 @@
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
-
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#E9C46A"><link rel="apple-touch-icon" href="icons/icon-192.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"GeneralContractor","name":"Obra Segura Construcciones","description":"Constructora en Santa Fe. Viviendas llave en mano y ampliaciones.","url":"https://obrasegurasf.com.ar","telephone":"+54 9 3496 591636","email":"info@obrasegurasf.com.ar","image":"https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=85&fit=crop","address":{"@type":"PostalAddress","addressLocality":"Santa Fe, Santa Fe","addressCountry":"AR"},"openingHours":"Lun–Vie: 8:00–18:00","priceRange":"$$","hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Llave en mano","description":"Tu casa desde cero hasta la entrega final.","provider":{"@type":"GeneralContractor","name":"Obra Segura Construcciones"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Ampliaciones","description":"Ampliamos tu vivienda con la misma calidad.","provider":{"@type":"GeneralContractor","name":"Obra Segura Construcciones"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Proyectos y planos","description":"Proyecto arquitectónico y gestión de permisos.","provider":{"@type":"GeneralContractor","name":"Obra Segura Construcciones"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Dirección de obra","description":"Supervisión técnica en obras de terceros.","provider":{"@type":"GeneralContractor","name":"Obra Segura Construcciones"}}}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cómo puedo contactarlos?","acceptedAnswer":{"@type":"Answer","text":"Podés contactarnos por WhatsApp, email o completando el formulario de esta página. Respondemos en menos de 2 horas."}},{"@type":"Question","name":"¿Cuáles son los horarios de atención?","acceptedAnswer":{"@type":"Answer","text":"Nuestros horarios están indicados en la sección de contacto. También podés escribirnos fuera de horario."}},{"@type":"Question","name":"¿Hacen presupuestos sin cargo?","acceptedAnswer":{"@type":"Answer","text":"Sí, todos nuestros presupuestos son gratuitos y sin compromiso."}},{"@type":"Question","name":"¿Trabajan con empresas y particulares?","acceptedAnswer":{"@type":"Answer","text":"Trabajamos con ambos. Tenemos experiencia con clientes particulares y empresas de distintos rubros."}},{"@type":"Question","name":"¿Tienen garantía en sus servicios?","acceptedAnswer":{"@type":"Answer","text":"Sí, todos nuestros servicios tienen garantía. Ante cualquier inconveniente lo resolvemos sin costo adicional."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://obrasegurasf.com.ar/"},{"@type":"ListItem","position":2,"name":"Obra Segura Construcciones","item":"https://obrasegurasf.com.ar/"}]}</script>
@@ -926,6 +926,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 document.addEventListener('contextmenu',e=>e.preventDefault());
 
 
+/* PWA Service Worker */
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('./sw.js').catch(()=>{});
+}
 
 /* QR Code */
 (function(){

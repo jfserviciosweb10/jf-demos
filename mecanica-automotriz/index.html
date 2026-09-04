@@ -19,7 +19,7 @@
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
-
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#E9C46A"><link rel="apple-touch-icon" href="icons/icon-192.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoRepair","name":"TallerPro","description":"Taller mecánico integral en Buenos Aires. Diagnóstico computarizado y reparaciones con garantía.","url":"https://tallerprocba.com.ar","telephone":"+54 9 3496 591636","email":"info@tallerpro.com.ar","image":"https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1600&q=85&fit=crop","address":{"@type":"PostalAddress","addressLocality":"Buenos Aires, CABA","addressCountry":"AR"},"openingHours":"Lun–Vie: 8:00–18:00 / Sáb: 8:00–13:00","priceRange":"$$","hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Diagnóstico computarizado","description":"Escáner de última generación para detectar fallas con precisión.","provider":{"@type":"AutoRepair","name":"TallerPro"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Service y mantenimiento","description":"Cambio de aceite, filtros y mantenimiento preventivo.","provider":{"@type":"AutoRepair","name":"TallerPro"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Motor y transmisión","description":"Reparación y puesta a punto con la precisión que merece tu auto.","provider":{"@type":"AutoRepair","name":"TallerPro"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Frenos y seguridad","description":"Pastillas, discos y líquido de frenos. Tu seguridad primero.","provider":{"@type":"AutoRepair","name":"TallerPro"}}}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Trabajan con todas las marcas?","acceptedAnswer":{"@type":"Answer","text":"Sí, atendemos todas las marcas y modelos de autos, camionetas y SUVs."}},{"@type":"Question","name":"¿Cuánto tarda un service?","acceptedAnswer":{"@type":"Answer","text":"Un service básico lleva entre 2 y 4 horas. Para trabajos mayores te damos un plazo estimado al ingresar el vehículo."}},{"@type":"Question","name":"¿Hacen presupuesto antes de reparar?","acceptedAnswer":{"@type":"Answer","text":"Siempre. No comenzamos ningún trabajo sin tu autorización previa y el presupuesto aprobado."}},{"@type":"Question","name":"¿Tienen garantía en los trabajos?","acceptedAnswer":{"@type":"Answer","text":"Sí, todos nuestros trabajos tienen garantía. Ante cualquier problema lo resolvemos sin costo."}},{"@type":"Question","name":"¿Trabajan con repuestos originales?","acceptedAnswer":{"@type":"Answer","text":"Usamos repuestos originales y alternativos de primera calidad según la preferencia del cliente."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://tallerprocba.com.ar/"},{"@type":"ListItem","position":2,"name":"TallerPro","item":"https://tallerprocba.com.ar/"}]}</script>
@@ -926,6 +926,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 document.addEventListener('contextmenu',e=>e.preventDefault());
 
 
+/* PWA Service Worker */
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('./sw.js').catch(()=>{});
+}
 
 /* QR Code */
 (function(){

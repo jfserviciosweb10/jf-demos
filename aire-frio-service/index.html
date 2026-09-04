@@ -19,7 +19,7 @@
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
-
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#0077B6"><link rel="apple-touch-icon" href="icons/icon-192.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"AireFrío Service","description":"Service de aire acondicionado en Rosario. Instalación, mantenimiento y reparación.","url":"https://airfrioservice.com.ar","telephone":"+54 9 3496 591636","email":"info@airfrioservice.com.ar","image":"https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1600&q=85&fit=crop","address":{"@type":"PostalAddress","addressLocality":"Rosario, Santa Fe","addressCountry":"AR"},"openingHours":"Lun–Sáb: 7:00–19:00","priceRange":"$$","hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Instalación","description":"Split, central y multi-split de todas las marcas.","provider":{"@type":"LocalBusiness","name":"AireFrío Service"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Mantenimiento","description":"Service preventivo para alargar la vida útil del equipo.","provider":{"@type":"LocalBusiness","name":"AireFrío Service"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Reparaciones","description":"Diagnóstico y reparación con repuestos originales.","provider":{"@type":"LocalBusiness","name":"AireFrío Service"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Carga de gas","description":"Recarga con equipos homologados y factura oficial.","provider":{"@type":"LocalBusiness","name":"AireFrío Service"}}}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cómo puedo contactarlos?","acceptedAnswer":{"@type":"Answer","text":"Podés contactarnos por WhatsApp, email o completando el formulario de esta página. Respondemos en menos de 2 horas."}},{"@type":"Question","name":"¿Cuáles son los horarios de atención?","acceptedAnswer":{"@type":"Answer","text":"Nuestros horarios están indicados en la sección de contacto. También podés escribirnos fuera de horario."}},{"@type":"Question","name":"¿Hacen presupuestos sin cargo?","acceptedAnswer":{"@type":"Answer","text":"Sí, todos nuestros presupuestos son gratuitos y sin compromiso."}},{"@type":"Question","name":"¿Trabajan con empresas y particulares?","acceptedAnswer":{"@type":"Answer","text":"Trabajamos con ambos. Tenemos experiencia con clientes particulares y empresas de distintos rubros."}},{"@type":"Question","name":"¿Tienen garantía en sus servicios?","acceptedAnswer":{"@type":"Answer","text":"Sí, todos nuestros servicios tienen garantía. Ante cualquier inconveniente lo resolvemos sin costo adicional."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://airfrioservice.com.ar/"},{"@type":"ListItem","position":2,"name":"AireFrío Service","item":"https://airfrioservice.com.ar/"}]}</script>
@@ -926,6 +926,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 document.addEventListener('contextmenu',e=>e.preventDefault());
 
 
+/* PWA Service Worker */
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('./sw.js').catch(()=>{});
+}
 
 /* QR Code */
 (function(){

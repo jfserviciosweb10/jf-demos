@@ -19,7 +19,7 @@
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
-
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#E63946"><link rel="apple-touch-icon" href="icons/icon-192.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TravelAgency","name":"Viajes del Sol","description":"Agencia de viajes en Mendoza. Paquetes nacionales e internacionales con atención personalizada.","url":"https://viajesdelsolmza.com.ar","telephone":"+54 9 3496 591636","email":"info@viajesdelsolmza.com.ar","image":"https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1600&q=85&fit=crop","address":{"@type":"PostalAddress","addressLocality":"Mendoza, Mendoza","addressCountry":"AR"},"openingHours":"Lun–Vie: 9:00–19:00 / Sáb: 9:00–13:00","priceRange":"$$","hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Vuelos","description":"Mejores tarifas nacionales e internacionales con cuotas.","provider":{"@type":"TravelAgency","name":"Viajes del Sol"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Hoteles","description":"Selección curada en todos los destinos y categorías.","provider":{"@type":"TravelAgency","name":"Viajes del Sol"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Paquetes todo incluido","description":"Vuelo, hotel y excursiones en un solo pago.","provider":{"@type":"TravelAgency","name":"Viajes del Sol"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Luna de miel","description":"Experiencias románticas para parejas. Atención personalizada.","provider":{"@type":"TravelAgency","name":"Viajes del Sol"}}}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cómo puedo contactarlos?","acceptedAnswer":{"@type":"Answer","text":"Podés contactarnos por WhatsApp, email o completando el formulario de esta página. Respondemos en menos de 2 horas."}},{"@type":"Question","name":"¿Cuáles son los horarios de atención?","acceptedAnswer":{"@type":"Answer","text":"Nuestros horarios están indicados en la sección de contacto. También podés escribirnos fuera de horario."}},{"@type":"Question","name":"¿Hacen presupuestos sin cargo?","acceptedAnswer":{"@type":"Answer","text":"Sí, todos nuestros presupuestos son gratuitos y sin compromiso."}},{"@type":"Question","name":"¿Trabajan con empresas y particulares?","acceptedAnswer":{"@type":"Answer","text":"Trabajamos con ambos. Tenemos experiencia con clientes particulares y empresas de distintos rubros."}},{"@type":"Question","name":"¿Tienen garantía en sus servicios?","acceptedAnswer":{"@type":"Answer","text":"Sí, todos nuestros servicios tienen garantía. Ante cualquier inconveniente lo resolvemos sin costo adicional."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://viajesdelsolmza.com.ar/"},{"@type":"ListItem","position":2,"name":"Viajes del Sol","item":"https://viajesdelsolmza.com.ar/"}]}</script>
@@ -926,6 +926,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 document.addEventListener('contextmenu',e=>e.preventDefault());
 
 
+/* PWA Service Worker */
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('./sw.js').catch(()=>{});
+}
 
 /* QR Code */
 (function(){
