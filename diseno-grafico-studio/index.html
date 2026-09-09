@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Estudio Gráfico Forma — Córdoba, Córdoba</title>
+
+<style>
+.jf-search-btn{background:rgba(255,255,255,.08);border:none;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:.85rem;display:flex;align-items:center;justify-content:center;margin-left:8px}
+.jf-search-btn:hover{background:rgba(255,255,255,.18)}
+#jfSearchOverlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:2000;display:none;align-items:flex-start;justify-content:center;padding:8vh 20px}
+#jfSearchOverlay.open{display:flex}
+#jfSearchPanel{background:#fff;border-radius:var(--r2,14px);max-width:640px;width:100%;max-height:75vh;overflow:auto;padding:24px;position:relative}
+#jfSearchClose{position:absolute;top:14px;right:16px;background:none;border:none;font-size:1.3rem;cursor:pointer;color:#888}
+#jfSearchTitle{font-weight:800;font-size:1.05rem;margin-bottom:14px;color:#222}
+@media(max-width:600px){#jfSearchOverlay{padding:4vh 12px}}
+</style>
 <meta name="description" content="Estudio de diseño gráfico en Córdoba. Identidad de marca, diseño web y comunicación visual. Córdoba, Córdoba.">
 <meta property="og:title" content="Estudio Gráfico Forma">
 <meta property="og:description" content="Estudio de diseño gráfico en Córdoba. Identidad de marca, diseño web y comunicación visual.">
@@ -134,6 +145,27 @@ h5{font-family:var(--ff-d);font-size:.9rem;font-weight:700;color:var(--texto);li
 .producto-info h3{font-size:1.15rem;margin-bottom:8px;color:var(--texto)}
 .producto-desc{color:#666;font-size:.92rem;line-height:1.5;margin-bottom:12px}
 .producto-precio{font-family:var(--ff-d);font-size:1.4rem;color:var(--p);font-weight:700;margin-bottom:18px}
+/* Colecciones Decap/Sveltia: Menú, Staff, Portfolio, Promociones */
+.coleccion-grid{display:grid;grid-template-columns:1fr;gap:28px}
+@media(min-width:640px){.coleccion-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.coleccion-grid{grid-template-columns:repeat(3,1fr)}}
+.coleccion-card{background:white;border-radius:var(--r);box-shadow:var(--sombra);transition:all var(--tr);overflow:hidden;border:1px solid rgba(0,0,0,.05)}
+.coleccion-card:hover{transform:translateY(-6px)}
+.coleccion-img{width:100%;aspect-ratio:1/1;overflow:hidden;background:#f2f2f2;display:flex}
+.coleccion-img img{width:100%;height:100%;object-fit:cover;flex:1}
+.coleccion-img-doble{display:flex;gap:2px}
+.coleccion-img-doble .mitad{position:relative;flex:1;overflow:hidden}
+.coleccion-img-doble .mitad img{width:100%;height:100%;object-fit:cover;display:block}
+.coleccion-img-doble .tag-mitad{position:absolute;bottom:8px;left:8px;background:rgba(0,0,0,.65);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:20px}
+.coleccion-info{padding:24px}
+.coleccion-info h3{font-size:1.15rem;margin-bottom:6px;color:var(--texto)}
+.coleccion-info .coleccion-sub{font-family:var(--ff-d);font-size:1.05rem;color:var(--p);font-weight:700;margin-bottom:10px}
+.coleccion-info p{font-size:.92rem;color:#666;line-height:1.6}
+.horarios-lista{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.horario-item{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 20px;background:white;border-radius:var(--r);box-shadow:var(--sombra);border:1px solid rgba(0,0,0,.05)}
+.horario-item .h-fecha{font-weight:700;color:var(--texto)}
+.horario-item .h-horario{color:var(--p);font-weight:700}
+.horario-item .h-nota{font-size:.85rem;color:#888;flex-basis:100%}
 .btn-producto{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:white;padding:12px 22px;border-radius:50px;font-weight:700;font-size:.92rem;transition:all var(--tr);width:100%;justify-content:center}
 .btn-producto:hover{background:#20c55a;transform:translateY(-2px)}
 .tienda-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9997;align-items:center;justify-content:center;padding:24px}
@@ -318,6 +350,55 @@ footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
 </style>
 </head>
 <body>
+<!-- JF-LANDING-START -->
+<style>
+  #jf-landing{--jlbg:#181828;--jlbg2:#1e1e30;--jlcard:#2c2c42;--jlgold:#f0b429;
+    --jlgold2:#ffd166;--jlwa:#25d366;--jlt1:#fff;--jlt2:#b8b8c8;--jlt3:#8888a0;
+    --jlborder:rgba(255,255,255,.10);--jlr2:14px;
+    background:var(--jlbg);color:var(--jlt1);padding:3rem 1.5rem;font-family:system-ui,sans-serif}
+  #jf-landing *{box-sizing:border-box}
+  #jf-landing .jf-l-grid{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:2.5rem;align-items:center}
+  #jf-landing .jf-l-grid>div:first-child{flex:1.2;min-width:300px}
+  #jf-landing .jf-l-img{flex:1;min-width:260px;border-radius:var(--jlr2);overflow:hidden}
+  #jf-landing .jf-l-img img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
+  #jf-landing .jf-l-tag{display:inline-block;background:rgba(240,180,41,.12);border:1px solid var(--jlgold);
+    color:var(--jlgold);font-size:.78rem;font-weight:800;letter-spacing:.04em;
+    padding:.4rem 1rem;border-radius:20px;margin-bottom:1.2rem}
+  #jf-landing h1{font-family:Georgia,serif;font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:700;
+    line-height:1.25;margin-bottom:1rem;color:var(--jlt1)}
+  #jf-landing h1 span{color:var(--jlgold)}
+  #jf-landing .jf-l-sub{color:var(--jlt2);font-size:.95rem;line-height:1.6;margin-bottom:1.4rem}
+  #jf-landing ul{list-style:none;margin-bottom:1.5rem;padding:0}
+  #jf-landing li{display:flex;gap:.6rem;margin-bottom:.6rem;font-size:.9rem;color:var(--jlt1)}
+  #jf-landing li::before{content:"✅";flex-shrink:0}
+  #jf-landing li.jf-l-propio{color:var(--jlgold2);font-weight:600}
+  #jf-landing li.jf-l-propio::before{content:"⭐"}
+  #jf-landing .jf-l-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--jlwa);
+    color:#06210f;font-weight:800;font-size:.9rem;padding:.8rem 1.6rem;border-radius:10px;text-decoration:none}
+  #jf-landing .jf-l-divider{text-align:center;margin-top:2.5rem;padding-top:1.5rem;
+    border-top:1px dashed var(--jlborder);font-size:.78rem;font-weight:800;letter-spacing:.04em;
+    color:var(--jlgold);text-transform:uppercase}
+</style>
+<div id="jf-landing">
+  <div class="jf-l-grid">
+    <div>
+      <div class="jf-l-tag">🎨 Webs para Estudios de Diseño</div>
+      <h1>Tu estudio necesita <span>clientes que te contraten</span>, no solo likes en Instagram</h1>
+      <p class="jf-l-sub">Te armamos una web como la que ves más abajo — real, en 24-48hs, con WhatsApp respondiendo por vos.</p>
+      <ul>
+        <li class="jf-l-propio">Portfolio prolijo de tus mejores trabajos, fácil de actualizar</li>
+        <li class="">Web profesional lista en 24-48hs</li>
+        <li class="">WhatsApp automático respondiendo consultas</li>
+        <li class="">Sistema ya armado y probado en 54 rubros distintos</li>
+      </ul>
+      <a href="https://api.whatsapp.com/send?phone=5493496591636&text=Hola%2C%20quiero%20una%20web%20para%20mi%20negocio" target="_blank" rel="noopener noreferrer" class="jf-l-cta">💬 Quiero mi web</a>
+    </div>
+    <div class="jf-l-img"><img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900&q=85&fit=crop" alt="diseno"></div>
+  </div>
+  <div class="jf-l-divider">👇 así se ve, de verdad — no es un mockup</div>
+</div>
+<!-- JF-LANDING-END -->
+
 
 <!-- JF BAR -->
 <div class="jf-bar">
@@ -330,18 +411,63 @@ footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
   <div class="nav-inner">
     <div class="logo">Estudio Gráfico Forma</div>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#galeria">Galería</a></li>
-      <li><a href="#proceso">Proceso</a></li>
-      <li><a href="#testimonios">Testimonios</a></li>
-      <li><a href="#faq">Preguntas</a></li>
-      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#inicio" data-i18n="nav.inicio">Inicio</a></li>
+      <li><a href="#nosotros" data-i18n="nav.nosotros">Nosotros</a></li>
+      <li><a href="#servicios" data-i18n="nav.servicios">Servicios</a></li>
+      <li><a href="#galeria" data-i18n="nav.galeria">Galería</a></li><li><a href="#menu" data-i18n="nav.menu">Menú</a></li><li><a href="#staff" data-i18n="nav.staff">Equipo</a></li><li><a href="#portfolio" data-i18n="nav.portfolio">Trabajos</a></li><li><a href="#promociones" data-i18n="nav.promociones">Promos</a></li>
+      <li><a href="#proceso" data-i18n="nav.proceso">Proceso</a></li>
+      <li><a href="#testimonios" data-i18n="nav.testimonios">Testimonios</a></li>
+      <li><a href="#faq" data-i18n="nav.faq">Preguntas</a></li>
+      <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
     </ul>
+    <button class="jf-search-btn" id="jfSearchBtn" aria-label="Buscar" onclick="abrirBusqueda()"><i class="fas fa-search"></i></button>
+    
     <button class="menu-toggle" id="menuToggle" aria-label="Menú"><i class="fas fa-bars"></i></button>
   </div>
 </nav>
+
+<!-- JF-Búsquedas (motor Pagefind por detrás) -->
+<div id="jfSearchOverlay" onclick="if(event.target===this)cerrarBusqueda()">
+  <div id="jfSearchPanel">
+    <button id="jfSearchClose" onclick="cerrarBusqueda()" aria-label="Cerrar">×</button>
+    <div id="jfSearchTitle">🔎 JF-Búsquedas</div>
+    <div id="jf-search-box"></div>
+  </div>
+</div>
+<script>
+let jfSearchCargado = false;
+function abrirBusqueda(){
+  document.getElementById('jfSearchOverlay').classList.add('open');
+  if(!jfSearchCargado){
+    jfSearchCargado = true;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet'; link.href = '/pagefind/pagefind-ui.css';
+    document.head.appendChild(link);
+    const script = document.createElement('script');
+    script.src = '/pagefind/pagefind-ui.js';
+    script.onload = function(){
+      new PagefindUI({
+        element: '#jf-search-box',
+        showSubResults: true,
+        translations: {
+          placeholder: 'Buscar en este sitio...',
+          zero_results: 'No se encontraron resultados para [SEARCH_TERM]',
+          many_results: '[COUNT] resultados para [SEARCH_TERM]',
+          one_result: '[COUNT] resultado para [SEARCH_TERM]',
+          load_more: 'Cargar más resultados'
+        }
+      });
+    };
+    document.body.appendChild(script);
+  }
+}
+function cerrarBusqueda(){
+  document.getElementById('jfSearchOverlay').classList.remove('open');
+}
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') cerrarBusqueda();
+});
+</script>
 
 <!-- 1. HERO -->
 <section class="hero" id="inicio">
@@ -388,26 +514,26 @@ footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
       <div class="nosotros-badge">✦ Desde 2018 en Córdoba</div>
     </div>
     <div class="nosotros-content reveal-up">
-      <div class="s-label">Quiénes somos</div>
+      <div class="s-label" data-i18n="nosotros.label">Quiénes somos</div>
       <h2>La historia detrás de Estudio Gráfico Forma</h2>
-      <p>Somos un equipo apasionado por lo que hacemos, con años de experiencia en el rubro y un compromiso real con cada cliente. Desde el primer día, nuestra misión fue clara: brindar un servicio de calidad que supere expectativas.</p>
-      <p>Trabajamos con los mejores productos y las técnicas más modernas para garantizarte resultados que duran. Cada cliente es único y recibe una atención personalizada desde el primer contacto.</p>
+      <p data-i18n="nosotros.p1">Somos un equipo apasionado por lo que hacemos, con años de experiencia en el rubro y un compromiso real con cada cliente. Desde el primer día, nuestra misión fue clara: brindar un servicio de calidad que supere expectativas.</p>
+      <p data-i18n="nosotros.p2">Trabajamos con los mejores productos y las técnicas más modernas para garantizarte resultados que duran. Cada cliente es único y recibe una atención personalizada desde el primer contacto.</p>
       <div class="nosotros-valores">
         <div class="valor-item">
           <div class="valor-icon"><i class="fas fa-star"></i></div>
-          <div><h4>Calidad</h4><p>Sin compromisos. Cada trabajo refleja nuestro estándar.</p></div>
+          <div><h4 data-i18n="valor1.t">Calidad</h4><p data-i18n="valor1.d">Sin compromisos. Cada trabajo refleja nuestro estándar.</p></div>
         </div>
         <div class="valor-item">
           <div class="valor-icon"><i class="fas fa-handshake"></i></div>
-          <div><h4>Compromiso</h4><p>Cumplimos lo que prometemos, siempre.</p></div>
+          <div><h4 data-i18n="valor2.t">Compromiso</h4><p data-i18n="valor2.d">Cumplimos lo que prometemos, siempre.</p></div>
         </div>
         <div class="valor-item">
           <div class="valor-icon"><i class="fas fa-users"></i></div>
-          <div><h4>Equipo</h4><p>Profesionales capacitados y en constante formación.</p></div>
+          <div><h4 data-i18n="valor3.t">Equipo</h4><p data-i18n="valor3.d">Profesionales capacitados y en constante formación.</p></div>
         </div>
         <div class="valor-item">
           <div class="valor-icon"><i class="fas fa-shield-alt"></i></div>
-          <div><h4>Garantía</h4><p>Respaldamos cada servicio con garantía real.</p></div>
+          <div><h4 data-i18n="valor4.t">Garantía</h4><p data-i18n="valor4.d">Respaldamos cada servicio con garantía real.</p></div>
         </div>
       </div>
     </div>
@@ -417,7 +543,7 @@ footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
 <!-- 3. SERVICIOS -->
 <section class="servicios" id="servicios">
   <div class="container">
-    <h2 class="section-title reveal-up">Nuestros servicios</h2>
+    <h2 class="section-title reveal-up" data-i18n="servicios.title">Nuestros servicios</h2>
     <div class="divider reveal-up"></div>
     <div class="services-grid s4">
     <div class="service-card reveal-up" style="animation-delay:0s">
@@ -446,8 +572,8 @@ footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
 <!-- 4. GALERÍA -->
 <section class="galeria" id="galeria">
   <div class="container">
-    <h2 class="section-title reveal-up">Galería de trabajos</h2>
-    <p class="section-sub reveal-up">Una muestra de lo que hacemos. Cada proyecto es único.</p>
+    <h2 class="section-title reveal-up" data-i18n="galeria.title">Galería de trabajos</h2>
+    <p class="section-sub reveal-up" data-i18n="galeria.sub">Una muestra de lo que hacemos. Cada proyecto es único.</p>
     <div class="gal-grid">
     <div class="gal-item reveal-up" style="animation-delay:0s">
       <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80&fit=crop" alt="Estudio Gráfico Forma — foto 1" loading="lazy">
@@ -529,11 +655,56 @@ footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
   </div>
 </section>
 
+
+<!-- NUESTRO MENÚ (Decap/Sveltia) -->
+<section class="menu-seccion" id="menu" style="display:none">
+  <div class="container">
+    <h2 class="section-title reveal-up" data-i18n="menu.title">Nuestro menú</h2>
+    <div class="divider reveal-up"></div>
+    <div class="menu-grid coleccion-grid"><!-- MENU-GRID-START --><!-- MENU-GRID-END --></div>
+  </div>
+</section>
+
+<!-- NUESTRO EQUIPO (Decap/Sveltia) -->
+<section class="staff-seccion" id="staff" style="display:none">
+  <div class="container">
+    <h2 class="section-title reveal-up" data-i18n="staff.title">Nuestro equipo</h2>
+    <div class="divider reveal-up"></div>
+    <div class="staff-grid coleccion-grid"><!-- STAFF-GRID-START --><!-- STAFF-GRID-END --></div>
+  </div>
+</section>
+
+<!-- NUESTROS TRABAJOS (Decap/Sveltia) -->
+<section class="portfolio-seccion" id="portfolio" style="display:none">
+  <div class="container">
+    <h2 class="section-title reveal-up" data-i18n="portfolio.title">Nuestros trabajos</h2>
+    <div class="divider reveal-up"></div>
+    <div class="portfolio-grid coleccion-grid"><!-- PORTFOLIO-GRID-START --><!-- PORTFOLIO-GRID-END --></div>
+  </div>
+</section>
+
+<!-- PROMOCIONES (Decap/Sveltia) -->
+<section class="promociones-seccion" id="promociones" style="display:none">
+  <div class="container">
+    <h2 class="section-title reveal-up" data-i18n="promociones.title">Promociones</h2>
+    <div class="divider reveal-up"></div>
+    <div class="promociones-grid coleccion-grid"><!-- PROMOCIONES-GRID-START --><!-- PROMOCIONES-GRID-END --></div>
+  </div>
+</section>
+
+<!-- HORARIOS ESPECIALES (Decap/Sveltia) -->
+<section class="horarios-seccion" id="horarios-especiales" style="display:none">
+  <div class="container">
+    <h2 class="section-title reveal-up" data-i18n="horarios.title">Horarios especiales</h2>
+    <p class="section-sub reveal-up" data-i18n="horarios.sub">Feriados y fechas puntuales — el resto de la semana, el horario habitual sigue como siempre.</p>
+    <div class="horarios-lista"><!-- HORARIOS-LISTA-START --><!-- HORARIOS-LISTA-END --></div>
+  </div>
+</section>
 <!-- 5. PROCESO -->
 <section class="proceso" id="proceso">
   <div class="container">
-    <h2 class="section-title reveal-up">¿Cómo trabajamos?</h2>
-    <p class="section-sub reveal-up">Un proceso simple, transparente y sin sorpresas.</p>
+    <h2 class="section-title reveal-up" data-i18n="proceso.title">¿Cómo trabajamos?</h2>
+    <p class="section-sub reveal-up" data-i18n="proceso.sub">Un proceso simple, transparente y sin sorpresas.</p>
     <div class="proc-grid">
     <div class="proc-step reveal-up" style="animation-delay:0s">
       <div class="proc-num">01</div>
@@ -556,7 +727,7 @@ footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
 <!-- 6. TESTIMONIOS -->
 <section class="testimonios" id="testimonios">
   <div class="container">
-    <h2 class="section-title reveal-up">Lo que dicen nuestros clientes</h2>
+    <h2 class="section-title reveal-up" data-i18n="testimonios.title">Lo que dicen nuestros clientes</h2>
     <div class="divider reveal-up"></div>
     <div class="testi-grid">
     <div class="testi-card reveal-up" style="animation-delay:0s">
@@ -580,7 +751,7 @@ footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
 <!-- 7. FAQ -->
 <section class="faq" id="faq">
   <div class="container">
-    <h2 class="section-title reveal-up">Preguntas frecuentes</h2>
+    <h2 class="section-title reveal-up" data-i18n="faq.title">Preguntas frecuentes</h2>
     <div class="divider reveal-up"></div>
     <div class="faq-inner">
     <div class="faq-item reveal-up">
@@ -634,27 +805,27 @@ footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
 <!-- 8. CONTACTO -->
 <section class="contacto" id="contacto">
   <div class="container">
-    <h2 class="section-title reveal-up">Contacto</h2>
-    <p class="section-sub reveal-up">Escribinos y te respondemos en menos de 2 horas.</p>
+    <h2 class="section-title reveal-up" data-i18n="contacto.title">Contacto</h2>
+    <p class="section-sub reveal-up" data-i18n="contacto.sub">Escribinos y te respondemos en menos de 2 horas.</p>
     <div class="contacto-wrap">
       <div class="reveal-up">
-        <h2>Hablemos</h2>
-        <p>Estamos listos para ayudarte. Elegí la forma que más te convenga.</p>
+        <h2 data-i18n="contacto.hablemos">Hablemos</h2>
+        <p data-i18n="contacto.hablemos.p">Estamos listos para ayudarte. Elegí la forma que más te convenga.</p>
         <div class="contacto-dato">
           <div class="dato-ico"><i class="fas fa-phone"></i></div>
-          <div class="dato-txt"><h4>Teléfono</h4><p><a href="tel:+5493496591636">+54 9 3496 591636</a></p></div>
+          <div class="dato-txt"><h4 data-i18n="contacto.telefono">Teléfono</h4><p><a href="tel:+5493496591636">+54 9 3496 591636</a></p></div>
         </div>
         <div class="contacto-dato">
           <div class="dato-ico"><i class="fas fa-envelope"></i></div>
-          <div class="dato-txt"><h4>Email</h4><p><a href="mailto:info@estudioformacba.com.ar">info@estudioformacba.com.ar</a></p></div>
+          <div class="dato-txt"><h4 data-i18n="contacto.email">Email</h4><p><a href="mailto:info@estudioformacba.com.ar">info@estudioformacba.com.ar</a></p></div>
         </div>
         <div class="contacto-dato">
           <div class="dato-ico"><i class="fas fa-clock"></i></div>
-          <div class="dato-txt"><h4>Horario</h4><p>Lun–Vie: 9:00–18:00</p></div>
+          <div class="dato-txt"><h4 data-i18n="contacto.horario">Horario</h4><p>Lun–Vie: 9:00–18:00</p></div>
         </div>
         <div class="contacto-dato">
           <div class="dato-ico"><i class="fas fa-map-marker-alt"></i></div>
-          <div class="dato-txt"><h4>Ubicación</h4><p>Córdoba, Córdoba</p></div>
+          <div class="dato-txt"><h4 data-i18n="contacto.ubicacion">Ubicación</h4><p>Córdoba, Córdoba</p></div>
         </div>
         <a href="https://wa.me/5493496591636?text=Hola!%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20hacer%20una%20consulta."
            target="_blank" rel="noopener"
@@ -662,31 +833,31 @@ footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
            onmouseover="this.style.background='#20c55a';this.style.transform='translateY(-2px)'"
            onmouseout="this.style.background='#25d366';this.style.transform='translateY(0)'">
           <i class="fab fa-whatsapp" style="font-size:1.2rem"></i>
-          Escribinos por WhatsApp
+          <span data-i18n="contacto.wabtn">Escribinos por WhatsApp</span>
         </a>
       </div>
       <div class="form-card reveal-up">
-        <h3>Envianos un mensaje</h3>
+        <h3 data-i18n="form.title">Envianos un mensaje</h3>
         <form id="contactForm" action="https://formspree.io/f/movnpobb" method="POST">
           <input type="hidden" name="_subject" value="Consulta desde Estudio Gráfico Forma">
           <div class="form-group">
-            <label>Nombre *</label>
-            <input type="text" name="nombre" class="form-control" placeholder="Tu nombre completo" required>
+            <label data-i18n="form.nombre">Nombre *</label>
+            <input type="text" name="nombre" class="form-control" placeholder="Tu nombre completo" data-i18n-ph="form.nombre.ph" required>
           </div>
           <div class="form-group">
-            <label>WhatsApp *</label>
-            <input type="tel" name="telefono" class="form-control" placeholder="Ej: 341 555 0192" required>
+            <label data-i18n="form.whatsapp">WhatsApp *</label>
+            <input type="tel" name="telefono" class="form-control" placeholder="Ej: 341 555 0192" data-i18n-ph="form.whatsapp.ph" required>
           </div>
           <div class="form-group">
-            <label>Email</label>
-            <input type="email" name="email" class="form-control" placeholder="tu@email.com">
+            <label data-i18n="form.email">Email</label>
+            <input type="email" name="email" class="form-control" placeholder="tu@email.com" data-i18n-ph="form.email.ph">
           </div>
           <div class="form-group">
-            <label>Mensaje *</label>
-            <textarea name="mensaje" class="form-control" placeholder="¿En qué te podemos ayudar?" required></textarea>
+            <label data-i18n="form.mensaje">Mensaje *</label>
+            <textarea name="mensaje" class="form-control" placeholder="¿En qué te podemos ayudar?" data-i18n-ph="form.mensaje.ph" required></textarea>
           </div>
           <button type="submit" class="btn-submit" id="submitBtn">
-            <i class="fas fa-paper-plane"></i> Enviar mensaje
+            <i class="fas fa-paper-plane"></i> <span data-i18n="form.submit">Enviar mensaje</span>
           </button>
           <div class="form-msg" id="formMsg"></div>
         </form>
@@ -695,10 +866,10 @@ footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
     <!-- QR + VCF -->
     <div class="contacto-extras">
       <button class="extra-btn" onclick="toggleQR()" aria-label="Ver QR de contacto">
-        <i class="fas fa-qrcode"></i> Escanear QR
+        <i class="fas fa-qrcode"></i> <span data-i18n="form.qr">Escanear QR</span>
       </button>
       <a class="extra-btn" href="#" onclick="descargarVCF(event)" aria-label="Guardar contacto">
-        <i class="fas fa-address-card"></i> Guardar contacto
+        <i class="fas fa-address-card"></i> <span data-i18n="form.vcf">Guardar contacto</span>
       </a>
     </div>
     <div class="qr-wrap">
@@ -730,14 +901,14 @@ footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
     <div class="footer-col">
       <h4>Navegación</h4>
       <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#inicio" data-i18n="nav.inicio">Inicio</a></li>
+        <li><a href="#nosotros" data-i18n="nav.nosotros">Nosotros</a></li>
+        <li><a href="#servicios" data-i18n="nav.servicios">Servicios</a></li>
+        <li><a href="#galeria" data-i18n="nav.galeria">Galería</a></li><li><a href="#menu" data-i18n="nav.menu">Menú</a></li><li><a href="#staff" data-i18n="nav.staff">Equipo</a></li><li><a href="#portfolio" data-i18n="nav.portfolio">Trabajos</a></li><li><a href="#promociones" data-i18n="nav.promociones">Promos</a></li>
         <li><a href="#proceso">Cómo trabajamos</a></li>
-        <li><a href="#testimonios">Testimonios</a></li>
-        <li><a href="#faq">Preguntas</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#testimonios" data-i18n="nav.testimonios">Testimonios</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">Preguntas</a></li>
+        <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -751,15 +922,15 @@ footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Estudio Gráfico Forma — Todos los derechos reservados.</p>
-    <a href="https://jfserviciosweb.com" target="_blank" rel="noopener">Diseño web por <strong>JF Servicios Web</strong></a>
+    <p>© 2026 Estudio Gráfico Forma — <span data-i18n="footer.rights">Todos los derechos reservados</span>.</p>
+    <a href="https://jfserviciosweb.com" target="_blank" rel="noopener"><span data-i18n="footer.credito">Diseño web por</span> <strong>JF Servicios Web</strong></a>
   </div>
 </footer>
 
 <!-- WA FLOTANTE -->
 <a href="https://wa.me/5493496591636?text=Hola!%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20hacer%20una%20consulta."
    class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <img src="img/WHATSAPP-FLOTANTE.webp?v=2" alt="WhatsApp" loading="lazy">
+  <img src="img/whatsapp-flotante.webp?v=2" alt="WhatsApp" loading="lazy">
 </a>
 
 <!-- COOKIES -->
@@ -872,7 +1043,7 @@ if(form){
       if(res.ok){formMsg.className='form-msg ok';formMsg.textContent='✅ ¡Mensaje enviado! Te respondemos pronto.';form.reset();}
       else throw new Error();
     }catch{formMsg.className='form-msg err';formMsg.textContent='❌ Error. Escribinos por WhatsApp.';}
-    finally{submitB.innerHTML='<i class="fas fa-paper-plane"></i> Enviar mensaje';submitB.disabled=false;setTimeout(()=>{formMsg.className='form-msg';},6000);}
+    finally{submitB.innerHTML='<i class="fas fa-paper-plane"></i> <span data-i18n="form.submit">Enviar mensaje</span>';submitB.disabled=false;setTimeout(()=>{formMsg.className='form-msg';},6000);}
   });
 }
 
@@ -1023,5 +1194,6 @@ window.descargarVCF = function(e){
 </div>
 <!-- Microsoft Clarity — al final del body, no bloqueante -->
 <script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.defer=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","XXXXXXXXXX");</script>
+
 </body>
 </html>

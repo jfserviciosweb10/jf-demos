@@ -6,10 +6,10 @@
 - **WhatsApp:** 5493496591636
 - **Email:** info@estanciapampagrnde.com.ar
 - **Formspree ID:** movnpobb
-- **Generado:** 2026-09-04
+- **Generado:** 2026-09-09
 
 ## ✅ Checklist antes de publicar
-- [ ] Reemplazar img/WHATSAPP-FLOTANTE.webp con el ícono real
+- [ ] Reemplazar img/whatsapp-flotante.webp con el ícono real
 - [ ] Confirmar email Formspree del cliente (revisar SPAM)
 - [ ] Verificar Schema en search.google.com/test/rich-results
 - [ ] Probar formulario enviando mensaje real
