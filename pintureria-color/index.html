@@ -6,8 +6,8 @@
 <title>Pinturería Color Total — Mendoza, Mendoza</title>
 
 <style>
-.jf-search-btn{background:rgba(255,255,255,.08);border:none;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:.85rem;display:flex;align-items:center;justify-content:center;margin-left:8px}
-.jf-search-btn:hover{background:rgba(255,255,255,.18)}
+.jf-search-btn{background:rgba(0,0,0,.07);border:none;color:var(--p);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:.85rem;display:flex;align-items:center;justify-content:center;margin-left:8px}
+.jf-search-btn:hover{background:rgba(0,0,0,.14)}
 #jfSearchOverlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:2000;display:none;align-items:flex-start;justify-content:center;padding:8vh 20px}
 #jfSearchOverlay.open{display:flex}
 #jfSearchPanel{background:#fff;border-radius:var(--r2,14px);max-width:640px;width:100%;max-height:75vh;overflow:auto;padding:24px;position:relative}
@@ -326,9 +326,14 @@ footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
   .tienda-grid{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:repeat(2,1fr)}
 }
-@media(min-width:900px){
-  .nav-links{display:flex;flex-direction:row;position:static;width:auto;background:transparent;padding:0;gap:28px;box-shadow:none}
+@media(min-width:1200px){
+  .nav-links{display:flex;flex-direction:row;position:static;width:auto;background:transparent;padding:0;gap:clamp(12px,1.3vw,26px);box-shadow:none}
   .menu-toggle{display:none}
+  .nav-inner{max-width:1400px}
+  .logo,.nav-inner>img{flex-shrink:0;margin-right:24px}
+  .nav-links a{font-size:13px;white-space:nowrap}
+}
+@media(min-width:900px){
   .services-grid{grid-template-columns:repeat(3,1fr)}
   .services-grid.s4{grid-template-columns:repeat(2,1fr)}
   .services-grid.s2{grid-template-columns:repeat(2,1fr)}
@@ -414,11 +419,11 @@ footer{background:#1a1a2e;color:#888;padding:56px 24px 32px}
       <li><a href="#inicio" data-i18n="nav.inicio">Inicio</a></li>
       <li><a href="#nosotros" data-i18n="nav.nosotros">Nosotros</a></li>
       <li><a href="#servicios" data-i18n="nav.servicios">Servicios</a></li>
-      <li><a href="#galeria" data-i18n="nav.galeria">Galería</a></li><li><a href="#menu" data-i18n="nav.menu">Menú</a></li><li><a href="#staff" data-i18n="nav.staff">Equipo</a></li><li><a href="#portfolio" data-i18n="nav.portfolio">Trabajos</a></li><li><a href="#promociones" data-i18n="nav.promociones">Promos</a></li>
+      <li><a href="#galeria" data-i18n="nav.galeria">Galería</a></li><li data-nav-col="menu" style="display:none"><a href="#menu" data-i18n="nav.menu">Menú</a></li><li data-nav-col="staff" style="display:none"><a href="#staff" data-i18n="nav.staff">Equipo</a></li><li data-nav-col="portfolio" style="display:none"><a href="#portfolio" data-i18n="nav.portfolio">Trabajos</a></li><li data-nav-col="promociones" style="display:none"><a href="#promociones" data-i18n="nav.promociones">Promos</a></li>
       <li><a href="#proceso" data-i18n="nav.proceso">Proceso</a></li>
       <li><a href="#testimonios" data-i18n="nav.testimonios">Testimonios</a></li>
       <li><a href="#faq" data-i18n="nav.faq">Preguntas</a></li>
-      <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
+      <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li><!-- BLOG-NAV-START --><!-- BLOG-NAV-END -->
     </ul>
     <button class="jf-search-btn" id="jfSearchBtn" aria-label="Buscar" onclick="abrirBusqueda()"><i class="fas fa-search"></i></button>
     
@@ -747,7 +752,7 @@ document.addEventListener('keydown', function(e){
   <div class="container">
     <h2 class="section-title reveal-up" data-i18n="faq.title">Preguntas frecuentes</h2>
     <div class="divider reveal-up"></div>
-    <div class="faq-inner">
+    <div class="faq-inner"><!-- FAQ-AUTO-START -->
     <div class="faq-item reveal-up">
       <button class="faq-trigger" aria-expanded="false" aria-controls="faq0">
         <span>¿Cómo puedo contactarlos?</span>
@@ -792,7 +797,7 @@ document.addEventListener('keydown', function(e){
       <div class="faq-body" id="faq4">
         <p>Sí, todos nuestros servicios tienen garantía. Ante cualquier inconveniente lo resolvemos sin costo adicional.</p>
       </div>
-    </div></div>
+    </div><!-- FAQ-AUTO-END --></div>
   </div>
 </section>
 
@@ -898,11 +903,11 @@ document.addEventListener('keydown', function(e){
         <li><a href="#inicio" data-i18n="nav.inicio">Inicio</a></li>
         <li><a href="#nosotros" data-i18n="nav.nosotros">Nosotros</a></li>
         <li><a href="#servicios" data-i18n="nav.servicios">Servicios</a></li>
-        <li><a href="#galeria" data-i18n="nav.galeria">Galería</a></li><li><a href="#menu" data-i18n="nav.menu">Menú</a></li><li><a href="#staff" data-i18n="nav.staff">Equipo</a></li><li><a href="#portfolio" data-i18n="nav.portfolio">Trabajos</a></li><li><a href="#promociones" data-i18n="nav.promociones">Promos</a></li>
+        <li><a href="#galeria" data-i18n="nav.galeria">Galería</a></li><li data-nav-col="menu" style="display:none"><a href="#menu" data-i18n="nav.menu">Menú</a></li><li data-nav-col="staff" style="display:none"><a href="#staff" data-i18n="nav.staff">Equipo</a></li><li data-nav-col="portfolio" style="display:none"><a href="#portfolio" data-i18n="nav.portfolio">Trabajos</a></li><li data-nav-col="promociones" style="display:none"><a href="#promociones" data-i18n="nav.promociones">Promos</a></li>
         <li><a href="#proceso">Cómo trabajamos</a></li>
         <li><a href="#testimonios" data-i18n="nav.testimonios">Testimonios</a></li>
         <li><a href="#faq" data-i18n="nav.faq">Preguntas</a></li>
-        <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
+        <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li><!-- BLOG-NAV-START --><!-- BLOG-NAV-END -->
       </ul>
     </div>
     <div class="footer-col">
@@ -963,6 +968,7 @@ document.addEventListener('click',function(e){
     const jfH = jfBar ? jfBar.offsetHeight : 0;
     nav.style.top = jfH + 'px';
     document.body.style.paddingTop = (jfH + nav.offsetHeight) + 'px';
+    const nl = document.getElementById('navLinks'); if (nl) nl.style.top = (jfH + nav.offsetHeight) + 'px';
   }
   updateNavTop();
   window.addEventListener('resize', updateNavTop, {passive:true});
@@ -1140,7 +1146,7 @@ window.descargarVCF = function(e){
   URL.revokeObjectURL(url);
 };
 
-/* Exit Intent */
+/* Exit Intent */ /* SIN-PITCH-CLIENTES */
 (function(){
   let shown = false;
   function showExit(){
@@ -1174,7 +1180,7 @@ window.descargarVCF = function(e){
 </script>
 
 <!-- EXIT INTENT POPUP -->
-<div id="exitPopup">
+<div id="exitPopup"><!-- CARTEL-CLIENTE -->
   <div class="exit-box">
     <button class="exit-close" id="exitClose" aria-label="Cerrar">✕</button>
     <div class="exit-emoji">👋</div>
