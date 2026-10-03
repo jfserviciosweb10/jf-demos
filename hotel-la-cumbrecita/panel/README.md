@@ -6,11 +6,9 @@
 - **Celu (Android):** Chrome → "Agregar a pantalla de inicio"
 - **Celu (iPhone):** Safari → Compartir → "Agregar a pantalla de inicio"
 
-### Configuración pendiente
-1. Abrí el GAS del cliente en Apps Script
-2. Implementar → Nueva implementación → App web
-3. Copiá la URL y reemplazá `PENDIENTE_CONFIGURAR` en panel/index.html línea CONFIG.GAS_URL
-4. Subí los íconos del cliente en panel/icons/ (icon-192.png y icon-512.png)
+### Cómo se conecta
+- Es el Panel del Dueño de producción (RE-BOMBA): lee sus datos de Supabase (función panel-data) con el WhatsApp del dueño y su contraseña.
+- DEMO: funciona en modo demostración, con datos de ejemplo y sin contraseña.
 
 ### Datos del cliente
 - **Negocio:** Hotel Serrano La Cumbrecita
